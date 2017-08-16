@@ -8,32 +8,8 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="title">
-            <a href="#" class="logo logo-big"><span>re/</span>connect</a>
-        </div>
-        <div class="navbar-horizontal navbar-center">
-            <ul class="navbar-list">
-                <li class="navbar-item is-active"><a href="#">login</a></li>
-                <li class="navbar-item"><a href="#">search</a></li>
-                <li class="navbar-item"><a href="#">categories</a></li>
-            </ul>
-        </div>
-    </nav>
-    <aside>
-        <ul class="nav-vertical">
-            <li class="nav-item"><a href="#">category</a></li>
-            <li class="nav-item"><a href="#">category</a></li>
-            <li class="nav-item"><a href="#">category</a></li>
-            <li class="nav-item"><a href="#">category</a></li>
-            <li class="nav-item"><a href="#">category</a></li>
-            <li class="nav-item"><a href="#">category</a></li>
-            <li class="nav-item"><a href="#">category</a></li>
-            <li class="nav-item"><a href="#">category</a></li>
-            <li class="nav-item"><a href="#">category</a></li>
-            <li class="nav-item"><a href="#">category</a></li>
-        </ul>
-    </aside>
+    @import "top-navbar.html"
+    @import "aside.html"
     <main>
         <section class="articles-home loading">
             <div class="ui-status loading">
@@ -42,10 +18,6 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div class="brand">
-            <a href="#" class="logo logo-inverted logo-medium"><span>re/</span>connect</a>
-        </div>
-    </footer>
+    @import "footer.html"
 </body>
 </html>
