@@ -2,7 +2,6 @@ var gulp = require("gulp");
 var browserSync = require("browser-sync").create();
 
 // for html
-var htmlmin = require("gulp-htmlmin");
 var twig = require("gulp-twig");
 // for css
 var sass = require("gulp-sass");
@@ -30,6 +29,7 @@ gulp.task("build", ["html", "sass"]);
 // compile html files
 gulp.task("html", function(){
     gulp.src("src/*.html")
+        // process template
         .pipe(twig())
         // minimize html files
         .pipe(htmlmin({collapseWhitespace: true})) 
