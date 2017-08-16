@@ -26,6 +26,8 @@ gulp.task("default", ["html", "sass"], function(){
     gulp.watch(["src/styles/*.scss", "src/styles/**/*.scss"], ["sass"]);
 });
 
+gulp.task("build", ["html", "sass"]);
+
 // compile html files
 gulp.task("html", function(){
     gulp.src("src/*.html")
