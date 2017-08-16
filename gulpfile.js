@@ -3,8 +3,7 @@ var browserSync = require("browser-sync").create();
 
 // for html
 var htmlmin = require("gulp-htmlmin");
-var htmlimport = require("gulp-html-import");
-
+var twig = require("gulp-twig");
 // for css
 var sass = require("gulp-sass");
 var sourcemaps = require("gulp-sourcemaps");
@@ -31,8 +30,7 @@ gulp.task("build", ["html", "sass"]);
 // compile html files
 gulp.task("html", function(){
     gulp.src("src/*.html")
-        // import html partials
-        .pipe(htmlimport("src/components/"))
+        .pipe(twig())
         // minimize html files
         .pipe(htmlmin({collapseWhitespace: true})) 
         // copy to dist folder

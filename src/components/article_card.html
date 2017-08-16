@@ -1,0 +1,12 @@
+<div class="article-card">
+    <img src="{{ article_image }}">
+    <h1>{{ article_title }}</h1>
+    <div class="article-meta">
+        {{ article_author }} |
+        {{ article_date }} |
+        {{ article_comments }}
+    </div>
+    <div class="article-intro">
+        {% block article_intro %}{% endblock %}
+    </div>
+</div>

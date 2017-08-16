@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>re/connect</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    @import "top-navbar.html"
-    @import "aside.html"
-    <main>
-        <section class="articles-home loading">
-            <div class="ui-status loading">
-                <div class="spinner"></div>
-                <div class="text-center">Loading content...</div>
-            </div>
-        </section>
-    </main>
-    @import "footer.html"
-</body>
-</html>
+{% extends "layouts/default.html" %}
+{% set title = "re/connect - A new keep social network" %}
+
+{% block content %}
+    {% include "includes/article1.html" %}
+    {% include "includes/article2.html" %}
+    {% include "includes/article3.html" %}
+    {% include "includes/article4.html" %}
+    {% include "includes/article5.html" %}
+    {% include "includes/article6.html" %}
+    {% include "includes/article7.html" %}
+    {% include "includes/article8.html" %}
+    {% include "includes/article9.html" %}
+    {% include "includes/article10.html" %}
+{% endblock %}
