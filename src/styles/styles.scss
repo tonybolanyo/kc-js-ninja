@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Titillium+Web');
+
 @import "../../node_modules/minireset.css/minireset.sass";
 
 @import "variables";
 
+@import "../../node_modules/furtive/scss/all.scss";
+
 @import "components/global";
 @import "components/navbar";
 @import "components/aside";
+@import "components/elements";
