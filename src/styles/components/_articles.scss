@@ -1,0 +1,28 @@
+.article-card {
+    border: solid 1px $medium-neutral-color;
+    margin-bottom: $margin;
+    
+    .article-image {
+    }
+
+    .article-body {
+        padding: $padding;
+    }
+
+    .article-meta {
+        color: $dark-neutral-color;
+    }
+
+    .article-title {
+        color: darken($primary-color, 15%);
+        margin-bottom: $margin;
+        &:after {
+            content: "";
+            display: block;
+            background-color: $secondary_color;
+            width: 2rem;
+            height: 3px;
+            margin-top: -$font-size;
+        }
+    }
+}

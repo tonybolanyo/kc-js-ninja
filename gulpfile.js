@@ -2,7 +2,9 @@ var gulp = require("gulp");
 var browserSync = require("browser-sync").create();
 
 // for html
+var htmlmin = require("gulp-htmlmin");
 var twig = require("gulp-twig");
+
 // for css
 var sass = require("gulp-sass");
 var sourcemaps = require("gulp-sourcemaps");
