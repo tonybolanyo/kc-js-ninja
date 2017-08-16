@@ -3,6 +3,7 @@
 @import "../../node_modules/minireset.css/minireset.sass";
 
 @import "variables";
+@import "components/mixins";
 
 @import "../../node_modules/furtive/scss/all.scss";
 
@@ -14,3 +15,4 @@
 @import "components/footer";
 @import "components/spinner";
 @import "components/layout";
+@import "components/home";
