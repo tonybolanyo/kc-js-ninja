@@ -1,0 +1,17 @@
+.logo {
+    font-family: $title-font-family;
+    color: $primary-color;
+    text-decoration: none;
+    span {
+        color: $secondary-color;
+    }
+    &-big {
+        font-size: 3rem;
+    }
+    &-medium {
+        font-size: 2rem;
+    }
+    &-inverted {
+        color: $light-neutral-color;
+    }
+}
