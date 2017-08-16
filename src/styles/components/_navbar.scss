@@ -1,3 +1,44 @@
-.navbar {
-    float: right;
+.navbar-list {
+    list-style: none;
+    .navbar-item {
+        border-bottom: solid 1px $light-neutral-color;
+        &:first-child {
+            border-top: solid 1px $light-neutral-color;
+        }
+        a {
+            display: block;
+            padding: .5rem;
+            text-decoration: none;
+            color: $link-color;
+            &:hover {
+                background-color: $light-neutral-color;
+            }
+        }
+        &.is-active a {
+            background-color: $primary-color;
+            color: $light-neutral-color;
+        }
+        .navbar-horizontal & {
+            display: inline-block;
+            border: none;
+            a:hover {
+                border-bottom: solid 3px $primary-color;
+                background-color: transparent;
+            }
+            &.is-active {
+                a {
+                    border-bottom: solid 3px $secondary-color;
+                    color: $link-color;
+                    background-color: transparent;
+                    &:hover {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.navbar-center {
+    text-align: center;
 }
