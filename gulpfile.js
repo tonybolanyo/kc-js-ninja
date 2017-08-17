@@ -14,7 +14,7 @@ var cssnano = require("cssnano");
 var uncss = require('gulp-uncss');
 
 // default task for development
-gulp.task("default", ["html", "sass"], function(){
+gulp.task("default", ["html", "sass", "fonts"], function(){
     // launch develop local server
     browserSync.init({
         server: "dist/"
@@ -25,9 +25,12 @@ gulp.task("default", ["html", "sass"], function(){
 
     // watch styles folder to compile sass files
     gulp.watch(["src/styles/*.scss", "src/styles/**/*.scss"], ["sass"]);
+
+    // watch styles folder to copy fonts
+    gulp.watch(["src/fonts/*"], ["fonts"]);
 });
 
-gulp.task("build", ["html", "sass"]);
+gulp.task("build", ["html", "sass", "fonts"]);
 
 // compile html files
 gulp.task("html", function(){
@@ -64,5 +67,12 @@ gulp.task("sass", function(){
         // copy to dist folder
         .pipe(gulp.dest("dist/css/"))
         // and reload browsers
+        .pipe(browserSync.stream());
+});
+    
+// copy font files to dist
+gulp.task("fonts", function(){
+    gulp.src("src/fonts/*")
+        .pipe(gulp.dest("dist/fonts/"))
         .pipe(browserSync.stream());
 });
