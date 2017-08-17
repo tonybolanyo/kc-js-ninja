@@ -1,0 +1,37 @@
+.ui-status.empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    padding: $padding;
+    
+    [class*="ui-empty-"] {
+        margin-top: $margin;
+        text-align: center;
+    }
+
+    .ui-empty-icon {
+        font-size: 4rem;
+        color: $light-neutral-color;
+    }
+    
+    .ui-empty-label {
+        color: $medium-neutral-color;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    
+    .ui-empty-message {
+        color: $medium-neutral-color;
+        font-size: 1rem;
+        margin-bottom: $margin;
+        text-align: center;
+    }
+
+    .ui-empty-button {
+        button {
+            margin: 0 auto;
+        }
+    }
+}
