@@ -9,10 +9,24 @@
         <div class="article-intro">
             {% block article_intro %}{% endblock %}
         </div>
+    </div>
+    <div class="article-footer">
+        <div class="article-author-photo">
+        </div>
         <div class="article-meta">
-                {{ article_author }} |
-                {{ article_date }} |
-                {{ article_comments }}
+            <div class="article-author-name">
+                {{ article_author }}
+            </div>
+            <div class="article-date">
+                {{ article_date }}
             </div>
         </div>
+        <div class="article-fan">
+            <i class="icon icon-like"></i>
+            {{ article_likes }}
+            <br>
+            <i class="icon icon-comments"></i>
+            <span>{{ article_comments }}</span>
+        </div>
+    </div>
 </div>
