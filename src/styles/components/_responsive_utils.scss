@@ -1,0 +1,28 @@
+$xs: ( max:  calc($viewport-m -1px) );
+$sm: ( min:  $viewport-m );
+$md: ( min:  $viewport-l );
+$lg: ( min: $viewport-xl );
+$sm-only: ( min: map-get($sm, min), max: map-get($md, min) - 1px );
+$md-only: ( min: map-get($md, min), max: map-get($lg, min) - 1px );
+
+@mixin breakpoint($map) {
+    $query: "";
+    
+    @if map-has-key($map, min) {
+        $query: append($query, "(min-width: #{map-get($map, min)})")
+    }
+    
+    @if map-has-key($map, min) and map-has-key($map, max) {
+        $query: append($query, "and")
+    }
+
+    @if map-has-key($map, max) {
+        $query: append($query, "(max-width: #{map-get($map, max)})")
+    }
+
+    @media screen and #{$query} { @content; }
+}
+
+.hidden-xs {
+    @include breakpoint($xs);
+}
