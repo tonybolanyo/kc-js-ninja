@@ -6,13 +6,13 @@
         <div class="article-title">
             <h2>{{ article_title }}</h2>
         </div>
-        <div class="article-meta">
-            {{ article_author }} |
-            {{ article_date }} |
-            {{ article_comments }}
-        </div>
         <div class="article-intro">
             {% block article_intro %}{% endblock %}
         </div>
-    </div>
+        <div class="article-meta">
+                {{ article_author }} |
+                {{ article_date }} |
+                {{ article_comments }}
+            </div>
+        </div>
 </div>

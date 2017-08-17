@@ -14,21 +14,26 @@
     .article-body {
         padding: $padding;
     }
-
+    
     .article-meta {
         color: $dark-neutral-color;
+        font-size: $font-size-s;
     }
-
+    
     .article-title {
         color: darken($primary-color, 15%);
-        margin-bottom: $margin;
+        margin: $margin 0;
         &:after {
             content: "";
             display: block;
             background-color: $secondary_color;
             width: 2rem;
             height: 3px;
-            margin-top: -$font-size;
+            //margin-top: -1rem;
         }
+    }
+    
+    .article-intro {
+        margin: $margin 0;
     }
 }
