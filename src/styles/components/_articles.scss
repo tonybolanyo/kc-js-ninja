@@ -1,8 +1,14 @@
 .article-card {
     border: solid 1px $medium-neutral-color;
     margin-bottom: $margin;
+    padding-bottom: $padding;
+    height: calc(100% - 30px);
     
     .article-image {
+        width: 100%;
+        img {
+            width: 100%;
+        }
     }
 
     .article-body {

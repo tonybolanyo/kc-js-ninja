@@ -2,24 +2,39 @@
 {% set title = "re/connect - A new keep social network" %}
 
 {% block content %}
-    {% include "includes/article1.html" %}
-    {% include "includes/article2.html" %}
-    {% include "includes/article3.html" %}
-    {% include "includes/article4.html" %}
-    {% include "includes/article5.html" %}
-    {% include "includes/article6.html" %}
-    {% include "includes/article7.html" %}
-    {% include "includes/article8.html" %}
-    {% include "includes/article9.html" %}
-    {% include "includes/article10.html" %}
 
-    <div class="grd">
-        <div class="grd-row">
-            <div class="grd-row-col-1-6">column 1</div>
-            <div class="grd-row-col-2-6">column 2</div>
-            <div class="grd-row-col-2-6">column 3</div>
-            <div class="grd-row-col-1-6">column 4</div>
+<div class="frow-container">
+    <div class="frow gutters justify-start items-stretch">
+        <div class="col-md-1-1">
+            {% include "includes/article1.html" %}
+        </div>
+        <div class="col-sm-1-2 col-md-1-2">
+            {% include "includes/article2.html" %}
+        </div>
+        <div class="col-sm-1-2 col-md-1-4">
+            {% include "includes/article3.html" %}
+        </div>
+        <div class="col-sm-1-2 col-md-1-4">
+            {% include "includes/article4.html" %}
+        </div>
+        <div class="col-sm-1-2 col-md-1-4">
+            {% include "includes/article5.html" %}
+        </div>
+        <div class="col-sm-1-2 col-md-1-4">
+            {% include "includes/article6.html" %}
+        </div>
+        <div class="col-sm-1-2 col-md-1-4">
+            {% include "includes/article7.html" %}
+        </div>
+        <div class="col-sm-1-2 col-md-1-4">
+            {% include "includes/article8.html" %}
+        </div>
+        <div class="col-sm-1-2 col-md-1-4">
+            {% include "includes/article9.html" %}
+        </div>
+        <div class="col-sm-1-2 col-md-1-4">
+            {% include "includes/article10.html" %}
         </div>
     </div>
-
+</div>
 {% endblock %}
