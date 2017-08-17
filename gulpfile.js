@@ -11,6 +11,7 @@ var sourcemaps = require("gulp-sourcemaps");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var cssnano = require("cssnano");
+var uncss = require('gulp-uncss');
 
 // default task for development
 gulp.task("default", ["html", "sass"], function(){
@@ -49,6 +50,9 @@ gulp.task("sass", function(){
         .pipe(sourcemaps.init())
         // compile sass
         .pipe(sass().on("error", sass.logError))
+        .pipe(uncss({
+            html: ["src/*.html", "src/components/*.html", "src/layouts/*.html", "src/includes/*.html"]
+        }))
         .pipe(postcss([
             // add prefixes to old browsers compatibility
             autoprefixer(),
