@@ -48,6 +48,7 @@
             height: 50px;
             margin-right: .5rem;
             &:before {
+                position: relative;
                 font-family: "Reconnect";
                 content: $font-icon-profile;
                 width: 100%;
@@ -60,9 +61,13 @@
         }
         .article-meta {
             flex: 1 0 50%;
+            .article-author-name {
+                font-weight: bold;
+            }
         }
 
         .article-fan {
+            white-space: nowrap;
             line-height: 1.8rem;
             .icon {
                 font-size: 1.5rem;
