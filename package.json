@@ -24,7 +24,7 @@
     "autoprefixer": "^7.1.2",
     "browser-sync": "^2.18.13",
     "cssnano": "^3.10.0",
-    "furtive": "git+https://github.com/tonybolanyo/furtive.git",
+    "frow": "^2.0.1",
     "gulp": "^3.9.1",
     "gulp-htmlmin": "^3.0.0",
     "gulp-postcss": "^7.0.0",

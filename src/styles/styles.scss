@@ -5,7 +5,7 @@
 @import "variables";
 @import "components/mixins";
 
-@import "../../node_modules/furtive/scss/all.scss";
+@import "../../node_modules/frow/sass/frow";
 
 @import "components/global";
 @import "components/brand";
@@ -17,4 +17,3 @@
 @import "components/layout";
 @import "components/home";
 @import "components/articles";
-@import "components/responsive_utils";
