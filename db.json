@@ -1,6 +1,6 @@
 {
     "comments": [
         {"id": 1, "author": "John Doe", "email": "johndoe@example.com", "comment": "How hice article! Continue that way!"},
-        {"id": 2, "author": "Jane Doe", "email": "janedoe@example.com", "comment": "John doesn't know what he say, don't listen to him!"}
+        {"id": 2, "author": "Jane Doe", "email": "janedoe@example.com", "comment": "John doesn't know what he say, don't listen to him!", "parent": 1}
     ]
 }
