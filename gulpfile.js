@@ -24,7 +24,7 @@ var uglify = require("gulp-uglify");
 gulp.task("default", ["build"], function(){
     // launch develop local server
     browserSync.init({
-        server: "dist/"
+        proxy: "http://127.0.0.1:3003/"
     });
 
     // watch html files to reload browser
