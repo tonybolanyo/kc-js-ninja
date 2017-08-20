@@ -1,6 +1,15 @@
 var gulp = require("gulp");
 var browserSync = require("browser-sync").create();
 var notify = require("gulp-notify");
+var sourcemaps = require("gulp-sourcemaps");
+
+// For JSON Server
+var jsonServer = require("gulp-json-srv");
+var server = jsonServer.create({
+    port: 3003,
+    baseUrl: "/api",
+    static: './dist'
+});
 
 // for html
 var htmlmin = require("gulp-htmlmin");
@@ -8,7 +17,6 @@ var twig = require("gulp-twig");
 
 // for css
 var sass = require("gulp-sass");
-var sourcemaps = require("gulp-sourcemaps");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var cssnano = require("cssnano");
@@ -21,7 +29,7 @@ var buffer = require("gulp-buffer");
 var uglify = require("gulp-uglify");
 
 // default task for development
-gulp.task("default", ["build"], function(){
+gulp.task("default", ["build", "server"], function(){
     // launch develop local server
     browserSync.init({
         proxy: "http://127.0.0.1:3003/"
@@ -41,6 +49,11 @@ gulp.task("default", ["build"], function(){
 });
 
 gulp.task("build", ["html", "sass", "fonts", "js"]);
+
+gulp.task("server", function(){
+    return gulp.src("db.json")
+        .pipe(server.pipe());
+})
 
 // compile html files
 gulp.task("html", function(){
