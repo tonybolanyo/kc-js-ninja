@@ -1,63 +1,85 @@
-    /*
-    Flaticon icon font: reconnect
-    Creation date: 17/08/2017 18:36
-    Compiled by Tony G. Bolaño
-    Icons designed by Freepik
-    */
+/*
+Flaticon icon font: reconnect
+Creation date: 17/08/2017 18:36
+Compiled by Tony G. Bolaño
+Icons designed by Freepik
+*/
 
 @font-face {
-  font-family: "Reconnect";
-  src: url("../../fonts/reconnect.eot");
-  src: url("../../fonts/reconnect.eot?#iefix") format("embedded-opentype"),
-       url("../../fonts/reconnect.woff") format("woff"),
-       url("../../fonts/reconnect.ttf") format("truetype"),
-       url("../../fonts/reconnect.svg#Flaticon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
     font-family: "Reconnect";
-    src: url("../../fonts/reconnect.svg#Flaticon") format("svg");
-  }
+    src: url("../../fonts/reconnect.eot");
+    src: url("../../fonts/reconnect.eot?#iefix") format("embedded-opentype"), url("../../fonts/reconnect.woff") format("woff"), url("../../fonts/reconnect.ttf") format("truetype"), url("../../fonts/reconnect.svg#Flaticon") format("svg");
+    font-weight: normal;
+    font-style: normal;
 }
 
-.icon:before{
-  display: inline-block;
-  font-family: "Reconnect";
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: 1;
-  text-decoration: inherit;
-  text-rendering: optimizeLegibility;
-  text-transform: none;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
+.icon:before {
+    display: inline-block;
+    font-family: "Reconnect";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-decoration: inherit;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
 }
 
-.icon-menu:before { content: "\f100"; }
-.icon-search:before { content: "\f101"; }
-.icon-loading:before { content: "\f102"; }
-.icon-like:before { content: "\f103"; }
-.icon-comments:before { content: "\f104"; }
-.icon-categories:before { content: "\f105"; }
-.icon-profile:before { content: "\f106"; }
-.icon-share:before { content: "\f107"; }
-.icon-login:before { content: "\f108"; }
-.icon-logout:before { content: "\f109"; }
-.icon-liked:before { content: "\f110"; }
-    
-    $font-icon-menu: "\f100";
-    $font-icon-search: "\f101";
-    $font-icon-loading: "\f102";
-    $font-icon-like: "\f103";
-    $font-icon-comments: "\f104";
-    $font-icon-categories: "\f105";
-    $font-icon-profile: "\f106";
-    $font-icon-share: "\f107";
-    $font-icon-login: "\f108";
-    $font-icon-logout: "\f109";
-    $font-icon-liked: "\f110";
+.icon-menu:before {
+    content: "\f100";
+}
+
+.icon-search:before {
+    content: "\f101";
+}
+
+.icon-loading:before {
+    content: "\f102";
+}
+
+.icon-like:before {
+    content: "\f103";
+}
+
+.icon-comments:before {
+    content: "\f104";
+}
+
+.icon-categories:before {
+    content: "\f105";
+}
+
+.icon-profile:before {
+    content: "\f106";
+}
+
+.icon-share:before {
+    content: "\f107";
+}
+
+.icon-login:before {
+    content: "\f108";
+}
+
+.icon-logout:before {
+    content: "\f109";
+}
+
+.icon-liked:before {
+    content: "\f110";
+}
+
+$font-icon-menu: "\f100";
+$font-icon-search: "\f101";
+$font-icon-loading: "\f102";
+$font-icon-like: "\f103";
+$font-icon-comments: "\f104";
+$font-icon-categories: "\f105";
+$font-icon-profile: "\f106";
+$font-icon-share: "\f107";
+$font-icon-login: "\f108";
+$font-icon-logout: "\f109";
+$font-icon-liked: "\f110";
