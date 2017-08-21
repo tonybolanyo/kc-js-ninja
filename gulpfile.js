@@ -1,6 +1,8 @@
-var gulp = require("gulp");
 var browserSync = require("browser-sync").create();
+var gulp = require("gulp");
+var gutil = require('gulp-util');
 var notify = require("gulp-notify");
+var size    = require('gulp-size');
 var sourcemaps = require("gulp-sourcemaps");
 
 // For JSON Server
@@ -16,17 +18,17 @@ var htmlmin = require("gulp-htmlmin");
 var twig = require("gulp-twig");
 
 // for css
-var sass = require("gulp-sass");
-var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var cssnano = require("cssnano");
-var uncss = require('gulp-uncss');
+var postcss = require("gulp-postcss");
+var sass = require("gulp-sass");
 var stylelint = require('stylelint');
+var uncss = require('gulp-uncss');
 
 // for JavaScript
-var tap = require("gulp-tap");
 var browserify = require("browserify");
 var buffer = require("gulp-buffer");
+var tap = require("gulp-tap");
 var uglify = require("gulp-uglify");
 
 // default task for development
@@ -62,7 +64,7 @@ gulp.task("html", function(){
         // process template
         .pipe(twig())
         // minimize html files
-        .pipe(htmlmin({collapseWhitespace: true})) 
+        .pipe(htmlmin({ collapseWhitespace: true })) 
         // copy to dist folder
         .pipe(gulp.dest("dist"))
         /// and reload browsers
@@ -76,6 +78,8 @@ gulp.task("sass", ["sass:lint"], function(){
         .pipe(sourcemaps.init())
         // compile sass
         .pipe(sass().on("error", sass.logError))
+        .pipe(size({ showFiles: true }))
+        .pipe(size({ gzip: true, showFiles: true }))
         .pipe(uncss({
             html: ["src/*.html", "src/components/*.html", "src/layouts/*.html", "src/includes/*.html"]
         }))
@@ -85,6 +89,8 @@ gulp.task("sass", ["sass:lint"], function(){
             // compress compiled css
             cssnano()
         ]))
+        .pipe(size({ showFiles: true }))
+        .pipe(size({ gzip: true, showFiles: true }))
         // save sourcemaps in css folder
         .pipe(sourcemaps.write("./"))
         // copy to dist folder
@@ -118,15 +124,19 @@ gulp.task("js", function(){
             file.contents = browserify(file.path, { debug: true })          // new browserify instance
                             .transform("babelify", { presets: ["es2015"] }) // ES6 -> ES5
                             .bundle()                                       // compile
-                            .on("error", function(error){                   // treat errors
-                                return notify().write(error);
-                            });
+                            .on("error", (error) => notify().write(error))  // treat errors
         }))
         // back file to gulp buffer to apply next pipe
         .pipe(buffer())
+        .on("finish", () => gutil.log('Original size:'))
+        .pipe(size({ showFiles: true }))
+        .pipe(size({ gzip: true, showFiles: true }))
         .pipe(sourcemaps.init({ loadMaps: true }))
         // minimize and ofuscate JavaScript file
         .pipe(uglify())
+        .on("finish", () => gutil.log('Size after uglify:'))
+        .pipe(size({ showFiles: true }))
+        .pipe(size({ gzip: true, showFiles: true }))
         // write sourcemap o same directory
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest("dist/js/"))
