@@ -1,5 +1,5 @@
-le $ = require('jquery');
+window.$ = window.jQuery = require('jquery');
 
 $(function() {
-    consol.log("Javascript loaded");
+    console.log("Javascript loaded");
 });

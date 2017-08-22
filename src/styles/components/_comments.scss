@@ -1,0 +1,38 @@
+.comment {
+    display: flex;
+    align-items: flex-start;
+}
+
+.comment-avatar {
+    flex: 0 0 15%;
+}
+
+.comment-content {
+    padding-left: $padding;
+}
+
+.comment-meta {
+    font-size: $font-size-s;
+    color: $dark-neutral-color;
+    margin-bottom: $margin;
+}
+
+.comment-author {
+    font-weight: bold;
+}
+
+.comment-date {
+    color: $light-neutral-color;
+}
+
+.comment-form {
+    margin: $margin auto;
+}
+
+.form-group {
+    margin: $margin auto;
+    & > button {
+        display: block;
+        width: 100%;
+    }
+}
