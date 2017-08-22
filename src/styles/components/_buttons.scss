@@ -1,0 +1,63 @@
+@mixin btn-flat($btn-color) {
+    border-color: darken($btn-color, 6%);
+    background-color: $btn-color;
+    color: white;
+    &:hover {
+        background-color: darken($btn-color, 6%);
+        color: lighten($btn-color, 50%);
+    }
+    &:active {
+        background-color: darken($btn-color, 10%);
+    }
+}
+
+@mixin btn-outline($btn-color) {
+    border-color: $btn-color;
+    //border-width: 2px;
+    color: $btn-color;
+    background-color: white;
+    &:hover {
+        background-color: $btn-color;
+    }
+}
+
+.btn, button, input[type="button"], input[type="reset"], input[type="submit"] {
+    @include btn-flat($light-neutral-color);
+    display: inline-block;
+    box-sizing: border-box;
+    border: solid 1px $light-neutral-color;
+    border-radius: 3px;
+    padding: $padding / 2;
+    text-decoration: none;
+    font-family: $font-family;
+    color: $text-color;
+    cursor: pointer;
+    transition: all .25s ease;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.btn-primary {
+    @include btn-flat($primary-color);
+}
+
+.btn-secondary {
+    @include btn-flat($secondary-color);
+}
+
+.btn-tertiary {
+    @include btn-flat($tertiary-color);
+}
+
+.btn-primary-outline {
+    @include btn-outline($primary-color);
+}
+
+.btn-secondary-outline {
+    @include btn-outline($secondary-color);
+}
+
+.btn-tertiary-outline {
+    @include btn-outline($tertiary-color);
+}

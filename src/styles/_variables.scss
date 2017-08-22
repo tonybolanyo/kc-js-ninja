@@ -10,6 +10,10 @@ $text-color: darken($dark-neutral-color, 10%);
 $title-color: $primary-color;
 $link-color: darken($secondary-color, 20%);
 
+$error-color: $secondary-color;
+$warning-color: $tertiary-color;
+$success-color: $primary-color;
+
 $font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $title-font-family: "Titillium Web", $font-family;
 
@@ -20,3 +24,6 @@ $font-size-s: .8rem;
 
 $padding: 1rem;
 $margin: $padding;
+
+// disable frow buttons
+$frow-enable-buttons: false;

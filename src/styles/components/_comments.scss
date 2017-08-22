@@ -27,12 +27,11 @@
 
 .comment-form {
     margin: $margin auto;
-}
-
-.form-group {
-    margin: $margin auto;
-    & > button {
-        display: block;
-        width: 100%;
+    .form-group {
+        margin: $margin auto;
+        &>button {
+            display: block;
+            width: 100%;
+        }
     }
 }
