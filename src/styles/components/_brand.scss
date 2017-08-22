@@ -12,6 +12,10 @@
         font-size: 2rem;
     }
     &-inverted {
-        color: $light-neutral-color;
+        color: $light-neutral-color !important;
+    }
+    &:hover, &:active, &:focus {
+        text-decoration: none;
+        color: $primary-color;
     }
 }
