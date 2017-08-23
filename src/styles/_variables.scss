@@ -27,3 +27,11 @@ $margin: $padding;
 
 // disable frow buttons
 $frow-enable-buttons: false;
+
+// min sizes for responsive breakpoints
+// this values are defined as frow defaults
+// if you change this, you must change frow variables
+$size-xs: 0px;  // obviusly on mobile first design
+$size-sm: 768px;
+$size-md: 992px;
+$size-lg: 1200px;
