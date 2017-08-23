@@ -1,0 +1,72 @@
+.pager {
+    margin: 5em;
+    text-align: center;
+}
+
+.pager-group {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.pager-chevron {
+    padding: $padding/2 $padding;
+    color: $medium-neutral-color;
+    &:hover {
+        text-decoration: none;
+        color: $link-color;
+    }
+}
+
+.pager-item {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    height: 2.5rem;
+    .pager-link {
+        display: none;
+        @include if-size-sm {
+            display: block;
+            padding: $padding/2 $padding;
+            box-shadow: inset 0px -2px 0px 0px $light-neutral-color;
+            color: $medium-neutral-color;
+            margin: 0;
+        }
+        &:hover {
+            box-shadow: inset 0px -4px 0px 0px $light-neutral-color;
+            text-decoration: none;
+            color: $link-color;
+        }
+    }
+    .pager-disabled {
+        box-shadow: inset 0px -2px 0px 0px $light-neutral-color;
+        color: $medium-neutral-color;
+        padding: $padding/2;
+        &:hover {
+            color: $medium-neutral-color;
+            box-shadow: inset 0px -2px 0px 0px $light-neutral-color;
+            cursor: default;
+        }
+    }
+    .current {
+        box-shadow: inset 0px -4px 0px 0px $secondary-color;
+        color: $primary-color;
+        font-weight: bold;
+        &:hover {
+            box-shadow: inset 0px -4px 0px 0px $secondary-color;
+            cursor: default;
+        }
+    }
+}
+
+.pager-input {
+    display: inline-block;
+    margin-left: $margin;
+    >input {
+        width: 4rem; // 5 to 7 characters long
+        padding: $padding/2;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+}
