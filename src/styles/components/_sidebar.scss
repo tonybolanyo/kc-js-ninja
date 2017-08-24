@@ -1,30 +1,31 @@
 .sidebar {
-    display: none;
+    display: block;
     position: fixed;
     top: 0;
     right: 0;
-    width: 100%;
     height: 100%;
     background-color: $primary-color;
     opacity: .95;
     color: $light-neutral-color;
     z-index: 999990;
-
-    @include if-size-sm {
-        width: 50%;
-    }
-
-    @include if-size-md {
-        width: 25%;
-    }
-
+    width: 0;
+    transition: width .3s ease-in-out;
+    
     &.opened {
-        display: block;
+        width: 100%;
+        @include if-size-sm {
+            width: 50%;
+        }
+    
+        @include if-size-md {
+            width: 25%;
+        }
     }
 }
 
 .sidebar-nav {
     text-align: center;
+    margin-top: $margin;
 }
 
 .sidebar-nav-item {
@@ -41,7 +42,6 @@
     z-index: 999999;
     padding: 10px 32px 16px 0px;
     cursor: pointer;
-    //height: 30px;
 
     span, span:before, span:after {
         content: '';
