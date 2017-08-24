@@ -48,7 +48,7 @@ gulp.task("default", ["build", "server"], function(){
     gulp.watch(["src/fonts/*"], ["fonts"]);
 
     // watch js folder to compile JavaScript files
-    gulp.watch(["src/js/*.js", "src/js/++/+.js", "js"])
+    gulp.watch(["src/js/*.js", "src/js/**/*.js"], ["js"]);
 });
 
 gulp.task("build", ["html", "sass", "fonts", "js"]);
@@ -80,9 +80,11 @@ gulp.task("sass", ["sass:lint"], function(){
         .pipe(sass().on("error", sass.logError))
         .pipe(size({ showFiles: true }))
         .pipe(size({ gzip: true, showFiles: true }))
+        /*
         .pipe(uncss({
             html: ["src/*.html", "src/components/*.html", "src/layouts/*.html", "src/includes/*.html"]
         }))
+        */
         .pipe(postcss([
             // add prefixes to old browsers compatibility
             autoprefixer(),

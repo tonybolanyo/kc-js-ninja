@@ -1,0 +1,78 @@
+.sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $primary-color;
+    opacity: .95;
+    color: $light-neutral-color;
+    z-index: 999990;
+
+    @include if-size-sm {
+        width: 50%;
+    }
+
+    @include if-size-md {
+        width: 25%;
+    }
+
+    &.opened {
+        display: block;
+    }
+}
+
+.sidebar-nav {
+    text-align: center;
+}
+
+.sidebar-nav-item {
+    padding: $padding / 2;
+    a {
+        color: $light-neutral-color;
+    }
+}
+
+.sidebar-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 999999;
+    padding: 10px 32px 16px 0px;
+    cursor: pointer;
+    //height: 30px;
+
+    span, span:before, span:after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 2rem;
+        height: 5px;
+        background: $primary-color;
+        cursor: pointer;
+        transition: all 300ms ease-in-out;
+    }
+
+    span:before {
+        top: -10px
+    }
+
+    span:after {
+        bottom: -10px
+    }
+
+    &.opened span {
+        background-color: transparent;
+    }
+
+    &.opened span:before {
+        transform: translateY(10px) rotate(45deg);
+        background: $light-neutral-color;
+    }
+
+    &.opened span:after {
+        transform: translateY(-10px) rotate(-45deg);
+        background: $light-neutral-color;
+    }
+}

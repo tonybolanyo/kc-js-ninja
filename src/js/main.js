@@ -1,5 +1,6 @@
 window.$ = window.jQuery = require('jquery');
 
-$(function() {
-    console.log("Javascript loaded");
-});
+import SidebarManager from "./components/SidebarManager";
+
+const sidebarManager = new SidebarManager(".sidebar", ".sidebar-toggle");
+sidebarManager.init();
