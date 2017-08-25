@@ -60,3 +60,5 @@ typings/
 # release files
 dist/
 
+# icon fonts temporary files
+src/styles/components/_icons.scss

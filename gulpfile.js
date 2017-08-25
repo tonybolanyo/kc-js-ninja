@@ -191,6 +191,5 @@ gulp.task("fonticon", function () {
         .on('glyphs', function (glyphs, options) {
             console.log(glyphs);
         })
-        .pipe(gulp.dest('src/fonts/'))
         .pipe(gulp.dest('dist/fonts/'));
 });
