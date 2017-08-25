@@ -47,17 +47,6 @@
             width: 50px;
             height: 50px;
             margin-right: .5rem;
-            &:before {
-                position: relative;
-                font-family: "Reconnect";
-                content: $font-icon-profile;
-                width: 100%;
-                height: 100%;
-                font-size: 46px;
-                text-align: center;
-                display: block;
-                line-height: 50px;
-            }
         }
         .article-meta {
             flex: 1 0 50%;
@@ -72,6 +61,10 @@
             .icon {
                 font-size: 1.5rem;
                 vertical-align: middle;
+                color: $fan-icon-color;
+            }
+            .icon-liked {
+                color: $liked-icon-color;
             }
         }
     }

@@ -2,7 +2,7 @@ var browserSync = require("browser-sync").create();
 var gulp = require("gulp");
 var gutil = require('gulp-util');
 var notify = require("gulp-notify");
-var size    = require('gulp-size');
+var size = require('gulp-size');
 var sourcemaps = require("gulp-sourcemaps");
 
 // For JSON Server
@@ -31,8 +31,13 @@ var buffer = require("gulp-buffer");
 var tap = require("gulp-tap");
 var uglify = require("gulp-uglify");
 
+// font icon
+var iconfont = require('gulp-iconfont');
+var iconfontCss = require("gulp-iconfont-css");
+var runTimestamp = Math.round(Date.now() / 1000);
+
 // default task for development
-gulp.task("default", ["build", "server"], function(){
+gulp.task("default", ["build", "server"], function () {
     // launch develop local server
     browserSync.init({
         proxy: "http://127.0.0.1:3003/"
@@ -44,27 +49,26 @@ gulp.task("default", ["build", "server"], function(){
     // watch styles folder to compile sass files
     gulp.watch(["src/styles/*.scss", "src/styles/**/*.scss"], ["sass"]);
 
-    // watch styles folder to copy fonts
-    gulp.watch(["src/fonts/*"], ["fonts"]);
-
     // watch js folder to compile JavaScript files
     gulp.watch(["src/js/*.js", "src/js/**/*.js"], ["js"]);
 });
 
-gulp.task("build", ["html", "sass", "fonts", "js"]);
+gulp.task("build", ["fonticon", "html", "sass", "js"]);
 
-gulp.task("server", function(){
+gulp.task("server", function () {
     return gulp.src("db.json")
         .pipe(server.pipe());
 })
 
 // compile html files
-gulp.task("html", function(){
+gulp.task("html", function () {
     gulp.src("src/*.html")
         // process template
         .pipe(twig())
         // minimize html files
-        .pipe(htmlmin({ collapseWhitespace: true })) 
+        .pipe(htmlmin({
+            collapseWhitespace: true
+        }))
         // copy to dist folder
         .pipe(gulp.dest("dist"))
         /// and reload browsers
@@ -72,14 +76,19 @@ gulp.task("html", function(){
 });
 
 // compile css styles from sass files
-gulp.task("sass", ["sass:lint"], function(){
+gulp.task("sass", ["sass:lint"], function () {
     gulp.src("src/styles/*.scss")
         // capture sourcemaps
         .pipe(sourcemaps.init())
         // compile sass
         .pipe(sass().on("error", sass.logError))
-        .pipe(size({ showFiles: true }))
-        .pipe(size({ gzip: true, showFiles: true }))
+        .pipe(size({
+            showFiles: true
+        }))
+        .pipe(size({
+            gzip: true,
+            showFiles: true
+        }))
         /*
         .pipe(uncss({
             html: ["src/*.html", "src/components/*.html", "src/layouts/*.html", "src/includes/*.html"]
@@ -91,8 +100,13 @@ gulp.task("sass", ["sass:lint"], function(){
             // compress compiled css
             cssnano()
         ]))
-        .pipe(size({ showFiles: true }))
-        .pipe(size({ gzip: true, showFiles: true }))
+        .pipe(size({
+            showFiles: true
+        }))
+        .pipe(size({
+            gzip: true,
+            showFiles: true
+        }))
         // save sourcemaps in css folder
         .pipe(sourcemaps.write("./"))
         // copy to dist folder
@@ -102,46 +116,81 @@ gulp.task("sass", ["sass:lint"], function(){
 });
 
 // lint scss styles
-gulp.task("sass:lint", function(){
-    gulp.src(["src/styles/*.scss", "src/styles/**/*.scss"])
+gulp.task("sass:lint", function () {
+    gulp.src(["src/styles/*.scss", "src/styles/**/*.scss", "!src/styles/components/_icons.scss"])
         .pipe(postcss([
             // lint style files
             stylelint()
         ]))
 });
 
-// copy font files to dist
-gulp.task("fonts", function(){
-    gulp.src("src/fonts/*")
-        .pipe(gulp.dest("dist/fonts/"))
-        .pipe(browserSync.stream());
-});
-
 // compile and generate inly one js file
-gulp.task("js", function(){
+gulp.task("js", function () {
     gulp.src("src/js/main.js")
         // tap allows to apply a function to every file
-        .pipe(tap(function(file){
+        .pipe(tap(function (file) {
             // replace content file with browserify result
-            file.contents = browserify(file.path, { debug: true })          // new browserify instance
-                            .transform("babelify", { presets: ["es2015"] }) // ES6 -> ES5
-                            .bundle()                                       // compile
-                            .on("error", (error) => notify().write(error))  // treat errors
+            file.contents = browserify(file.path, {
+                    debug: true
+                }) // new browserify instance
+                .transform("babelify", {
+                    presets: ["es2015"]
+                }) // ES6 -> ES5
+                .bundle() // compile
+                .on("error", (error) => notify().write(error)) // treat errors
         }))
         // back file to gulp buffer to apply next pipe
         .pipe(buffer())
         .on("finish", () => gutil.log('Original size:'))
-        .pipe(size({ showFiles: true }))
-        .pipe(size({ gzip: true, showFiles: true }))
-        .pipe(sourcemaps.init({ loadMaps: true }))
+        .pipe(size({
+            showFiles: true
+        }))
+        .pipe(size({
+            gzip: true,
+            showFiles: true
+        }))
+        .pipe(sourcemaps.init({
+            loadMaps: true
+        }))
         // minimize and ofuscate JavaScript file
         .pipe(uglify())
         .on("finish", () => gutil.log('Size after uglify:'))
-        .pipe(size({ showFiles: true }))
-        .pipe(size({ gzip: true, showFiles: true }))
+        .pipe(size({
+            showFiles: true
+        }))
+        .pipe(size({
+            gzip: true,
+            showFiles: true
+        }))
         // write sourcemap o same directory
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest("dist/js/"))
         // and reload browsers
         .pipe(browserSync.stream())
+});
+
+// font icon
+gulp.task("fonticon", function () {
+    const fontName = 'reconnect';
+
+    gulp.src(["src/icons/*.svg"])
+        .pipe(iconfontCss({
+            fontName: fontName,
+            path: 'css',
+            targetPath: '../styles/components/_icons.scss',
+            fontPath: '../fonts/'
+        }))
+        .pipe(iconfont({
+            fontName: fontName,
+            //prependUnicode: true,
+            //formats: ['ttf', 'eot', 'woff', 'svg'],
+            timestamp: runTimestamp,
+            normalize: true,
+            fontHeight: 1001
+        }))
+        .on('glyphs', function (glyphs, options) {
+            console.log(glyphs);
+        })
+        .pipe(gulp.dest('src/fonts/'))
+        .pipe(gulp.dest('dist/fonts/'));
 });
