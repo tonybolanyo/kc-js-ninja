@@ -173,17 +173,17 @@ gulp.task("js", function () {
 gulp.task("fonticon", function () {
     const fontName = 'reconnect';
 
-    gulp.src(["src/icons/*.svg"])
+    gulp.src(["src/icons/*.svg"], {base: 'src'})
         .pipe(iconfontCss({
             fontName: fontName,
             path: 'css',
-            targetPath: '../styles/components/_icons.scss',
+            targetPath: '../../src/styles/components/_icons.scss',
             fontPath: '../fonts/'
         }))
         .pipe(iconfont({
             fontName: fontName,
             //prependUnicode: true,
-            //formats: ['ttf', 'eot', 'woff', 'svg'],
+            formats: ['ttf', 'eot', 'woff', 'svg', 'woff2'],
             timestamp: runTimestamp,
             normalize: true,
             fontHeight: 1001
