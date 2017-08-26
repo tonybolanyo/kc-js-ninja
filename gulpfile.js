@@ -31,6 +31,9 @@ var buffer = require("gulp-buffer");
 var tap = require("gulp-tap");
 var uglify = require("gulp-uglify");
 
+// for images
+var imagemin = require("gulp-imagemin");
+
 // font icon
 var iconfont = require('gulp-iconfont');
 var iconfontCss = require("gulp-iconfont-css");
@@ -197,5 +200,6 @@ gulp.task("fonticon", function () {
 // images
 gulp.task("images", function() {
     gulp.src(["src/images/*", "src/images/**/*"])
+        .pipe(imagemin())
         .pipe(gulp.dest("dist/img/"));
 });
