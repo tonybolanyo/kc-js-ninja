@@ -5,18 +5,15 @@
     height: calc(100% - 30px);
     display: flex;
     flex-direction: column;
-    
     .article-image {
         width: 100%;
         img {
             width: 100%;
         }
     }
-
     .article-body {
         padding: $padding;
         margin-bottom: auto;
-
         .article-title {
             color: darken($primary-color, 15%);
             margin: $margin 0;
@@ -28,13 +25,10 @@
                 height: 3px;
             }
         }
-        
         .article-intro {
             margin: $margin 0;
         }
-    
     }
-    
     .article-footer {
         padding: 0 $padding;
         color: $dark-neutral-color;
@@ -42,7 +36,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
         .article-author-photo {
             width: 50px;
             height: 50px;
@@ -54,19 +47,23 @@
                 font-weight: bold;
             }
         }
-
         .article-fan {
             white-space: nowrap;
             line-height: 1.8rem;
             .icon {
                 font-size: 1.5rem;
                 vertical-align: middle;
-                color: $fan-icon-color;
             }
             .icon-liked {
                 color: $liked-icon-color;
             }
+            a {
+                color: $fan-icon-color;
+            }
+            a:hover {
+                text-decoration: none;
+                color: $secondary-color;
+            }
         }
     }
-    
 }
