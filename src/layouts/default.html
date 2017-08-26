@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <title>{{ title }}</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
+    <a name="top"></a>
     <nav class="navbar">
         <div class="title">
             <a href="#" class="logo logo-big">
@@ -24,28 +27,37 @@
     </nav>
     <div class="sidebar-toggle"><span></span></div>
     <main>
-        {% block content %}
-        {% endblock %}
+        {% block content %} {% endblock %}
     </main>
     <footer>
+        <div class="back-top">
+            <a href="#top">
+                <i class="icon icon-top-arrow"></i><br>
+                Back top
+            </a>
+        </div>
         <div class="brand">
-            <a href="#" class="logo logo-inverted logo-medium"><span>re/</span>connect</a>
+            <a href="#" class="logo logo-inverted logo-medium">
+                <i class="icon icon-logo-outline"></i><br>
+                <span>re/</span>connect
+            </a>
         </div>
     </footer>
     <aside class="sidebar">
-            <ul class="sidebar-nav">
-                <li class="sidebar-nav-item"><a href="#">category</a></li>
-                <li class="sidebar-nav-item"><a href="#">category</a></li>
-                <li class="sidebar-nav-item"><a href="#">category</a></li>
-                <li class="sidebar-nav-item"><a href="#">category</a></li>
-                <li class="sidebar-nav-item"><a href="#">category</a></li>
-                <li class="sidebar-nav-item"><a href="#">category</a></li>
-                <li class="sidebar-nav-item"><a href="#">category</a></li>
-                <li class="sidebar-nav-item"><a href="#">category</a></li>
-                <li class="sidebar-nav-item"><a href="#">category</a></li>
-                <li class="sidebar-nav-item"><a href="#">category</a></li>
-            </ul>
-        </aside>
+        <ul class="sidebar-nav">
+            <li class="sidebar-nav-item"><a href="#">category</a></li>
+            <li class="sidebar-nav-item"><a href="#">category</a></li>
+            <li class="sidebar-nav-item"><a href="#">category</a></li>
+            <li class="sidebar-nav-item"><a href="#">category</a></li>
+            <li class="sidebar-nav-item"><a href="#">category</a></li>
+            <li class="sidebar-nav-item"><a href="#">category</a></li>
+            <li class="sidebar-nav-item"><a href="#">category</a></li>
+            <li class="sidebar-nav-item"><a href="#">category</a></li>
+            <li class="sidebar-nav-item"><a href="#">category</a></li>
+            <li class="sidebar-nav-item"><a href="#">category</a></li>
+        </ul>
+    </aside>
     <script src="js/main.js" async></script>
 </body>
+
 </html>

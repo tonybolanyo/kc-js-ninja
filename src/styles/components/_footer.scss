@@ -1,9 +1,35 @@
-
 footer {
     background-color: $primary-color;
     min-height: 150px;
     padding: 1rem;
+    a {
+        color: $light-neutral-color;
+        &:hover {
+            color: $secondary-color;
+        }
+    }
     .brand {
         text-align: center;
+        a {
+            display: inline-block;
+        }
+    }
+    .icon-logo-outline {
+        font-size: 4rem;
+    }
+    .back-top {
+        float: right;
+        text-transform: uppercase;
+        text-align: center;
+        .icon {
+            font-size: 2rem;
+        }
+        a {
+            display: block;
+            text-decoration: none;
+        }
+        &:hover {
+            background-color: rgba(255, 255, 255, .2);
+        }
     }
 }
