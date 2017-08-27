@@ -1,4 +1,6 @@
-window.$ = window.jQuery = require('jquery');
+import $ from "jquery";
+// make jquery globally available
+window.$ = window.jQuery = $;
 
 import SidebarManager from "./components/SidebarManager";
 import SmoothScroll from "./components/SmoothScrool";
