@@ -16,3 +16,9 @@
     }
 
 }
+
+@mixin no-decoration {
+    &, &:hover, &:active, &:focus, &:visited {
+        text-decoration: none;
+    }
+}

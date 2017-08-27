@@ -36,34 +36,34 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .article-author-photo {
-            width: 50px;
-            height: 50px;
-            margin-right: .5rem;
+    }
+    .article-author-photo {
+        width: 50px;
+        height: 50px;
+        margin-right: .5rem;
+    }
+    .article-meta {
+        flex: 1 0 50%;
+        .article-author-name {
+            font-weight: bold;
         }
-        .article-meta {
-            flex: 1 0 50%;
-            .article-author-name {
-                font-weight: bold;
-            }
+    }
+    .article-fan {
+        white-space: nowrap;
+        line-height: 1.8rem;
+        .icon {
+            font-size: 1.5rem;
+            vertical-align: middle;
         }
-        .article-fan {
-            white-space: nowrap;
-            line-height: 1.8rem;
-            .icon {
-                font-size: 1.5rem;
-                vertical-align: middle;
-            }
-            .icon-liked {
-                color: $liked-icon-color;
-            }
-            a {
-                color: $fan-icon-color;
-            }
-            a:hover {
-                text-decoration: none;
-                color: $secondary-color;
-            }
+        .icon-liked {
+            color: $liked-icon-color;
+        }
+        a {
+            color: $fan-icon-color;
+            @include no-decoration;
+        }
+        a:hover {
+            color: $secondary-color;
         }
     }
 }

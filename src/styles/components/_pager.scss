@@ -11,10 +11,10 @@
 }
 
 .pager-chevron {
+    @include no-decoration;
     padding: $padding/2 $padding;
     color: $medium-neutral-color;
     &:hover {
-        text-decoration: none;
         color: $link-color;
     }
 }
@@ -25,6 +25,7 @@
     padding: 0;
     height: 2.5rem;
     .pager-link {
+        @include no-decoration;
         display: none;
         @include if-size-sm {
             display: block;
@@ -35,7 +36,6 @@
         }
         &:hover {
             box-shadow: inset 0px -4px 0px 0px $light-neutral-color;
-            text-decoration: none;
             color: $link-color;
         }
     }

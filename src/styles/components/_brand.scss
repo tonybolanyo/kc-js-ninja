@@ -1,7 +1,7 @@
 .logo {
+    @include no-decoration;
     font-family: $title-font-family;
     color: $primary-color;
-    text-decoration: none;
     span {
         color: $secondary-color;
     }
@@ -27,7 +27,6 @@
     &:hover,
     &:active,
     &:focus {
-        text-decoration: none;
         color: $primary-color;
     }
     &:hover {

@@ -23,19 +23,16 @@
 
 .btn, button, input[type="button"], input[type="reset"], input[type="submit"] {
     @include btn-flat($light-neutral-color);
+    @include no-decoration;
     display: inline-block;
     box-sizing: border-box;
     border: solid 1px $light-neutral-color;
     border-radius: 3px;
     padding: $padding / 2;
-    text-decoration: none;
     font-family: $font-family;
     color: $text-color;
     cursor: pointer;
     transition: all .25s ease;
-    &:hover {
-        text-decoration: none;
-    }
 }
 
 .btn-primary {

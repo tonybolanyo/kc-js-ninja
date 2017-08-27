@@ -13,9 +13,9 @@
         border-top: solid 1px $light-neutral-color;
     }
     a {
+        @include no-decoration;
         display: block;
         padding: .5rem;
-        text-decoration: none;
         color: $link-color;
         &:hover {
             background-color: $light-neutral-color;
