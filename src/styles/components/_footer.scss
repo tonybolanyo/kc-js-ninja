@@ -21,10 +21,13 @@ footer {
         float: right;
         text-transform: uppercase;
         text-align: center;
+        font-size: .7rem;
+        border-radius: 50%;
         .icon {
             font-size: 2rem;
         }
         a {
+            padding: $padding;
             display: block;
             text-decoration: none;
         }
