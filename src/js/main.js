@@ -6,6 +6,7 @@ import LikesManager from "./components/LikesManager";
 import LikesService from "./components/LikesService";
 import SidebarManager from "./components/SidebarManager";
 import SmoothScroll from "./components/SmoothScrool";
+import TimeAgoManager from "./components/TimeAgoManager";
 
 const sidebarManager = new SidebarManager(".sidebar", ".sidebar-toggle");
 sidebarManager.init();
@@ -18,3 +19,6 @@ likesService.init();
 
 const likesManager = new LikesManager(".article-like", likesService);
 likesManager.init();
+
+const timeAgoManager = new TimeAgoManager(".article-date");
+timeAgoManager.init();
