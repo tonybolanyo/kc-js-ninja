@@ -6,9 +6,9 @@ export default class TimeAgoManager {
         console.log("Time ago manager constructor")
         this.element = $(selector);
         // configure moment threshold
-        moment.relativeTimeThreshold('ss', 0);
-        moment.relativeTimeThreshold('s', 59);
-        moment.relativeTimeThreshold('m', 59);
+        moment.relativeTimeThreshold('s', 60);
+        moment.relativeTimeThreshold('ss', 1);
+        moment.relativeTimeThreshold('m', 60);
         moment.relativeTimeThreshold('h', 24);
         moment.relativeTimeThreshold('d', 30);
         moment.relativeTimeThreshold('M', 12);
