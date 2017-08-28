@@ -14,6 +14,7 @@ const backTopManager = new SmoothScroll(".back-top a", 800);
 backTopManager.init();
 
 const likesService = new LikesService();
+likesService.init();
 
 const likesManager = new LikesManager(".article-like", likesService);
 likesManager.init();
