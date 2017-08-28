@@ -23,15 +23,15 @@
             </div>
         </div>
         <div class="article-fan">
-            <a href="#" class="article-like">
+            <a href="#" class="article-like" data-article-id="{{ article_id }}">
                 <i class="icon icon-like"></i>
+                <span class="article-likes-count">{{ article_likes }}</span>
             </a>
-            {{ article_likes }}
             <br>
             <a href="article_detail.html#comments">
                 <i class="icon icon-comments"></i>
+                <span>{{ article_comments }}</span>
             </a>
-            <span>{{ article_comments }}</span>
         </div>
     </div>
 </div>
