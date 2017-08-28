@@ -26,23 +26,26 @@ export default class LikesManager {
 
     toggleLike(element) {
         const articleId = element.data("article-id");
-        this.likesService.toggleArticleLike(articleId, currentUserId);
-        this.updateLikesCounter(obj, articleId);
-        this.updateLikeIconStatus(obj, articleId);
+        this.likesService.toggleArticleLike(articleId, currentUserId, () => {
+            this.updateLikesCounter(element, articleId);
+            this.updateLikeIconStatus(element, articleId);
+        });
     }
 
     updateLikesCounter(element, articleId) {
-        const likes = this.likesService.getArticleLikesCount(articleId);
-        $(element).find(".article-likes-count").html(likes)
+        this.likesService.getArticleLikesCount(articleId, (likes) => {
+            $(element).find(".article-likes-count").html(likes)
+        });
     }
 
     updateLikeIconStatus(element, articleId) {
-        const liked = this.likesService.isArticleLiked(articleId, currentUserId);
-        const icon = element.find(".icon");
-        if (liked) {
-            icon.addClass("icon-liked").removeClass("icon-like");
-        } else {
-            icon.addClass("icon-like").removeClass("icon-liked");
-        }
+        this.likesService.isArticleLiked(articleId, currentUserId, (liked) => {
+            const icon = element.find(".icon");
+            if (liked) {
+                icon.addClass("icon-liked").removeClass("icon-like");
+            } else {
+                icon.addClass("icon-like").removeClass("icon-liked");
+            }
+        });
     }
 }
