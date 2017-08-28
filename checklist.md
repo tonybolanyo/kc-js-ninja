@@ -24,13 +24,13 @@
         - Introducción ---------------------------- OK
         - Nombre del autor ------------------------ OK
         - Foto de perfil -------------------------- OK
-        - Dos artículo con placeholder ------------
-        - Fecha y hora de publicación: ------------
-            - < 1 min: segundos -------------------
-            - < 1 hora: minutos -------------------
-            - < 1 día: horas ----------------------
-            - < 1 semana: día de la semana --------
-            - > 1 semana: fecha y hora completas --
+            - Dos artículo con placeholder --------
+        - Fecha y hora de publicación: ------------ OK
+            - < 1 min: segundos ------------------- OK
+            - < 1 hora: minutos ------------------- OK
+            - < 1 día: horas ---------------------- OK
+            - < 1 semana: día de la semana -------- OK
+            - > 1 semana: fecha y hora completas -- OK
         - Botón me gusta: ------------------------- OK
             - Funcional con web storage ----------- OK
         - Número de comentarios: ------------------ OK
