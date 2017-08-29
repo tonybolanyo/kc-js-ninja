@@ -3,10 +3,10 @@
     - Encabezado
         - Nombre de la plataforma ----------------- OK
         - Input de búsquedas ----------------------
-        - Listado de categorías -------------------
+        - Listado de categorías ------------------- OK
         - Enlace a login -------------------------- OK
         - Enlace a registro ----------------------- OK
-        - Menú responsive -------------------------
+        - Menú responsive ------------------------- OK
 
     - Pie de página
         - Nombre de la plataforma ----------------- OK

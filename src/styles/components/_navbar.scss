@@ -1,6 +1,22 @@
 .navbar {
     .title {
         text-align: center;
+        @include if-size-sm {
+            margin-left: $margin;
+        }
+    }
+    .navbar-main {
+        text-align: center;
+        @include if-size-sm {
+            text-align: right;
+            margin-right: $margin;
+            margin-top: $margin;
+        }
+    }
+    @include if-size-sm {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 }
 
@@ -50,19 +66,15 @@
     }
 }
 
-.navbar-center {
-    text-align: center;
-}
-
-
 /* For scrolling horizontal navbar */
 
 .navbar-scrolling-wrapper {
     position: relative;
+    max-width: 100%;
 }
 
 .navbar-scrolling {
-    margin: $margin $margin;
+    margin: $margin 2*$margin;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
@@ -81,14 +93,15 @@
     line-height: 2rem;
     opacity: 0;
     &.left {
-        left: 0;
+        left: $margin;
         [data-overflow="both"]~&,
         [data-overflow="left"]~& {
             opacity: 1;
         }
     }
     &.right {
-        right: 0;
+        right: $margin;
+        line-height: 4rem;
         [data-overflow="both"]~&,
         [data-overflow="right"]~& {
             opacity: 1;
