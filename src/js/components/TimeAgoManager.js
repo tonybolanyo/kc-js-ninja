@@ -3,7 +3,6 @@ import moment from 'moment';
 
 export default class TimeAgoManager {
     constructor(selector) {
-        console.log("Time ago manager constructor")
         this.element = $(selector);
         // configure moment threshold
         moment.relativeTimeThreshold('s', 60);
@@ -15,7 +14,6 @@ export default class TimeAgoManager {
     }
 
     init() {
-        console.log("Time ago manager init")
         this.element.each((index) => {
             const dateElement = $(this.element[index]);
             const dateValue = moment(dateElement.data("pub-date"));
