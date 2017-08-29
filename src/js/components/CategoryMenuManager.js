@@ -6,6 +6,10 @@ export default class CategoryMenuManager {
     constructor(selector) {
         this.element = $(selector);
         this.listElement = this.element.find(".navbar-list");
+        this.leftButton = this.element.siblings(".navbar-indicator.left");
+        this.rightButton = this.element.siblings(".navbar-indicator.right");
+        this.scrollDistance = 200;
+        this.scrollTime = 400;
     }
 
     init() {
@@ -13,19 +17,28 @@ export default class CategoryMenuManager {
         this.element.attr("data-overflow", this.checkOverflow(this.element, this.listElement))
         console.log("overflow", this.element.data("overflow"));
 
-        // spy scroll
-        let last_knows_scroll_position = 0;
-        let ticking = false;
-        this.element.on("scroll", () => {
-            last_knows_scroll_position = window.scrollY;
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    this.doSomething(last_knows_scroll_position);
-                    ticking = false;
-                })
+        this.initScrollSpy();
+
+        this.leftButton.on("click", () => {
+            if (this.checkOverflow in ["right", "none"]) {
+                console.log("no se puede ir más a la izquierda");
             }
-            ticking = true;
+            console.log("offset", $(this.element).scrollLeft());
+            this.element.animate({
+                scrollLeft: $(this.element).scrollLeft() - this.scrollDistance
+            }, this.scrollTime);
         });
+
+        this.rightButton.on("click", () => {
+            if (this.checkOverflow in ["left", "none"]) {
+                console.log("no se puede ir más a la derecha");
+            }
+            console.log("offset", $(this.element).scrollLeft());
+            this.element.animate({
+                scrollLeft: $(this.element).scrollLeft() + this.scrollDistance
+            }, this.scrollTime);
+        });
+
     }
 
     checkOverflow(container, content) {
@@ -44,7 +57,23 @@ export default class CategoryMenuManager {
         }
     }
 
-    doSomething(scroll_position) {
+    updateDataOverflow(scroll_position) {
         this.element.attr("data-overflow", this.checkOverflow(this.element, this.listElement));
+    }
+
+    initScrollSpy() {
+        // spy scroll
+        let last_knows_scroll_position = 0;
+        let ticking = false;
+        this.element.on("scroll", () => {
+            last_knows_scroll_position = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    this.updateDataOverflow(last_knows_scroll_position);
+                    ticking = false;
+                })
+            }
+            ticking = true;
+        });
     }
 }
