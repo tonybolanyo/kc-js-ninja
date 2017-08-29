@@ -5,6 +5,7 @@ window.$ = window.jQuery = $;
 import CategoryMenuManager from "./components/CategoryMenuManager";
 import LikesManager from "./components/LikesManager";
 import LikesService from "./components/LikesService";
+import NavbarSearchManager from "./components/NavbarSearchManager";
 import SidebarManager from "./components/SidebarManager";
 import SmoothScroll from "./components/SmoothScrool";
 import TimeAgoManager from "./components/TimeAgoManager";
@@ -26,3 +27,6 @@ timeAgoManager.init();
 
 const categoryMenuManager = new CategoryMenuManager("#catMenu");
 categoryMenuManager.init();
+
+const navbarSearchManager = new NavbarSearchManager("#navbar-search", "#search-opener");
+navbarSearchManager.init();

@@ -1,41 +1,39 @@
 .navbar-search {
-    position: relative;
-    padding: 0 $padding;
-    input[type="search"] {
-        position: absolute;
-        height: 2rem;
-        font-size: 2rem;
-        display: inline-block;
-        border: none;
-        outline: none;
-        color: $dark-neutral-color;
-        padding: 1.1rem;
-        padding-right: 60px;
-        width: 0;
-        background: none;
-        z-index: 3;
-        transition: width .4s cubic-bezier(0, .795, 0, 0);
-        cursor: pointer;
-        background: red;
-        top: 0;
-        right: 0;
-        &:focus {
-            width: 600px;
-            z-index: 1;
-            border-bottom: 1px solid #BBB;
-            cursor: text;
+    position: absolute;
+    top: -6rem;
+    right: 0;
+    background: white;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    z-index: 999;
+    width: 100%;
+    transition: all .3s ease;
+    opacity: 0;
+    &.expanded {
+        top: 3.7rem;
+        opacity: 1;
+    }
+    input {
+        display: inline;
+        font-size: 3rem;
+        @include if-size-md {
+            font-size: 2.5em;
         }
     }
-    input[type="submit"] {
-        height: 2rem;
-        width: 63px;
-        display: inline-block;
-        color: red;
-        text-indent: -10000px;
-        border: none;
-        z-index: 2;
-        opacity: .4;
-        cursor: pointer;
-        transition: opacity .4s ease;
+    button {
+        width: 4rem;
+        font-size: 3rem;
+        @include if-size-md {
+            font-size: 2.5em;
+        }
+    }
+    @include if-size-md {
+        width: 30rem;
+        right: 12rem;
+        &.expanded {
+            top: 0;
+        }
     }
 }
+
