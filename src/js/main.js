@@ -2,6 +2,7 @@ import $ from "jquery";
 // make jquery globally available
 window.$ = window.jQuery = $;
 
+import CategoryMenuManager from "./components/CategoryMenuManager";
 import LikesManager from "./components/LikesManager";
 import LikesService from "./components/LikesService";
 import SidebarManager from "./components/SidebarManager";
@@ -22,3 +23,6 @@ likesManager.init();
 
 const timeAgoManager = new TimeAgoManager(".article-date");
 timeAgoManager.init();
+
+const categoryMenuManager = new CategoryMenuManager("#catMenu");
+categoryMenuManager.init();

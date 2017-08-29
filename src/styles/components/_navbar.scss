@@ -1,8 +1,9 @@
 .navbar {
     .title {
-       text-align: center;
+        text-align: center;
     }
 }
+
 .navbar-list {
     list-style: none;
 }
@@ -30,6 +31,9 @@
 .navbar-horizontal .navbar-item {
     display: inline-block;
     border: none;
+    a {
+        border-bottom: 3px solid white;
+    }
     a:hover {
         border-bottom: solid 3px $primary-color;
         background-color: transparent;
@@ -48,4 +52,46 @@
 
 .navbar-center {
     text-align: center;
+}
+
+
+/* For scrolling horizontal navbar */
+
+.navbar-scrolling-wrapper {
+    position: relative;
+}
+
+.navbar-scrolling {
+    margin: $margin $margin;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .navbar-list {
+        float: left;
+    }
+}
+
+.navbar-indicator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    line-height: 2rem;
+    opacity: 0;
+    &.left {
+        left: 0;
+        [data-overflow="both"]~&,
+        [data-overflow="left"]~& {
+            opacity: 1;
+        }
+    }
+    &.right {
+        right: 0;
+        [data-overflow="both"]~&,
+        [data-overflow="right"]~& {
+            opacity: 1;
+        }
+    }
 }
