@@ -1,3 +1,18 @@
+.comment-section {
+    &.loading .ui-status.loading {
+        display: block;
+    }
+    &.empty .ui-status.empty {
+        display: block;
+    }
+    &.error .ui-status.error {
+        display: block;
+    }
+    &.loaded .ui-status.loaded {
+        display: block;
+    }
+}
+
 .comment {
     display: flex;
     align-items: flex-start;

@@ -3,6 +3,8 @@ import $ from "jquery";
 window.$ = window.jQuery = $;
 
 import CategoryMenuManager from "./components/CategoryMenuManager";
+import CommentsListManager from "./components/CommentsListManager";
+import CommentsService from "./components/CommentsService";
 import LikesManager from "./components/LikesManager";
 import LikesService from "./components/LikesService";
 import NavbarSearchManager from "./components/NavbarSearchManager";
@@ -30,3 +32,7 @@ categoryMenuManager.init();
 
 const navbarSearchManager = new NavbarSearchManager("#navbar-search", "#search-opener");
 navbarSearchManager.init();
+
+const commentsService = new CommentsService("/api/comments");
+const commentsListManager = new CommentsListManager(".comment-section", commentsService);
+commentsListManager.init();
