@@ -1,5 +1,9 @@
 import $ from "jquery";
 
+// IE doesn't support Array.protoype.find
+// so a polyfill is needed
+import 'core-js/fn/array/find';
+
 // this must be taken from session
 // meanwhile, I use constant value to simulate user is logged in
 const currentUserId = 3;
