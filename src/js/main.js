@@ -38,7 +38,10 @@ navbarSearchManager.init();
 
 const commentsService = new CommentsService("/api/comments");
 
-const commentsListManager = new CommentsListManager(".comments-section", commentsService, PubSub);
+const commentDateTimeManager = new TimeAgoManager(".comment-date");
+commentDateTimeManager.init();
+
+const commentsListManager = new CommentsListManager(".comments-section", commentsService, PubSub, commentDateTimeManager);
 commentsListManager.init();
 
 const commentsFormManager = new CommentFormManager("#commentForm", commentsService, PubSub);

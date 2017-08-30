@@ -3,6 +3,7 @@ import moment from 'moment';
 
 export default class TimeAgoManager {
     constructor(selector) {
+        this.selector = selector;
         this.element = $(selector);
         // configure moment threshold
         moment.relativeTimeThreshold('s', 60);
@@ -11,14 +12,12 @@ export default class TimeAgoManager {
         moment.relativeTimeThreshold('h', 24);
         moment.relativeTimeThreshold('d', 30);
         moment.relativeTimeThreshold('M', 12);
+        console.log("time manager constructor");
     }
-
+    
     init() {
-        this.element.each((index) => {
-            const dateElement = $(this.element[index]);
-            const dateValue = moment(dateElement.data("pub-date"));
-            dateElement.html(this.getFormattedDate(dateValue));
-        });
+        console.log("time manager init", this.element);
+        this.setFormattedDate();
     }
     
     getFormattedDate(date) {
@@ -32,5 +31,19 @@ export default class TimeAgoManager {
             stringDate = date.format("YYYY-MM-DD HH:mm")
         }
         return stringDate;
+    }
+
+    setFormattedDate() {
+        this.element.each((index) => {
+            const dateElement = $(this.element[index]);
+            const dateValue = moment(dateElement.data("pub-date"));
+            dateElement.html(this.getFormattedDate(dateValue));
+            console.log("set html for", dateElement);
+        });
+    }
+
+    setupElements() {
+        this.element = $(this.selector);
+        console.log("setupElements", this.elements);
     }
 }

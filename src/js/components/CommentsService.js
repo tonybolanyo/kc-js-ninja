@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import moment from 'moment';
 
 export default class CommentsService {
     constructor(endpoint) {
@@ -15,6 +16,7 @@ export default class CommentsService {
 
     save(comment, successCallback, errorCallback) {
         let method = "post";
+        comment.datetime = moment().format("YYYY-MM-DD HH:mm:ss");
         if (comment.id) {
             method = "put"
         }

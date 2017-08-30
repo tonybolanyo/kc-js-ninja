@@ -1,11 +1,12 @@
 import UIStatusManager from "./UIStatusManager";
 
 export default class CommentsListManager extends UIStatusManager {
-    constructor(selector, service, pubSub) {
+    constructor(selector, service, pubSub, dateTimeFormatter) {
         super(selector);
         this.service = service;
         this.articleId = this.element.data("article-id");
         this.pubSub = pubSub;
+        this.dateTimeFormatter = dateTimeFormatter;
     }
     
     init() {
@@ -25,6 +26,8 @@ export default class CommentsListManager extends UIStatusManager {
                 this.setEmpty()
             } else {
                 this.renderComments(comments);
+                this.dateTimeFormatter.setupElements();
+                this.dateTimeFormatter.setFormattedDate();
                 this.setLoaded();
             }
         }, error => {
@@ -50,7 +53,7 @@ export default class CommentsListManager extends UIStatusManager {
                 <div class="comment-content">
                     <div class="comment-meta">
                         <span class="comment-author">${comment.author}</span> ·
-                        <span class="comment-date">TODO: date</span>
+                        <span class="comment-date" data-pub-date="${comment.datetime}">${comment.datetime}</span>
                     </div>
                     <div class="comment-text">${comment.comment}</div>
                 </div>
