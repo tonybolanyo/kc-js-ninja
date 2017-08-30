@@ -1,25 +1,25 @@
 import UIStatusManager from "./UIStatusManager";
 
 export default class CommentsListManager extends UIStatusManager {
-    constructor(selector, service) {
-        console.log("CommentsListManager.constructor");
+    constructor(selector, service, pubSub) {
         super(selector);
         this.service = service;
         this.articleId = this.element.data("article-id");
+        this.pubSub = pubSub;
     }
     
     init() {
-        console.log("CommentsListManager.init");
         if (this.articleId) {
             this.loadComments(this.articleId);
         } else {
             console.log("No article ID");
         }
+        this.pubSub.subscribe("new-comment", (topic, comment) => {
+            this.loadComments(comment.article_id);
+        });
     }
     
     loadComments(articleId) {
-        console.log("CommentsListManager.loadComments");
-        console.log("loading comments for article", articleId);
         this.service.listArticleComments(articleId, comments =>{
             if (comments.length == 0) {
                 this.setEmpty()
@@ -33,7 +33,6 @@ export default class CommentsListManager extends UIStatusManager {
     }
 
     renderComments(comments) {
-        console.log("CommentsListManager.renderComments");
         let html = "";
 
         for (let comment of comments) {
@@ -43,7 +42,6 @@ export default class CommentsListManager extends UIStatusManager {
     }
 
     renderComment(comment) {
-        console.log("CommentsListManager.renderComment");
         return `
             <div class="comment">
                 <div class="comment-avatar">

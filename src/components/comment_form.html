@@ -1,0 +1,25 @@
+<form class="comment-form loaded" id="commentForm" novalidate>
+        <div class="ui-status loading">
+            <div class="spinner"></div>
+            <div class="text-center">Sending comment, please wait...</div>
+        </div>
+        <div class="alert alert-error ui-status error">
+            Error container.
+        </div>
+        <div class="ui-status loaded">
+            <input type="hidden" id="articleId" name="articleId" value="{{ article_id }}">
+            <div class="form-group">
+                <label for="email">email</label>
+                <input type="email" id="email" name="email" required="required">
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required="required">
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment</label>
+                <textarea name="comment" id="comment" cols="30" rows="10" required="required"></textarea>
+            </div>
+            <div class="form-group"><button>Send comment</button></div>
+        </div>
+    </form>

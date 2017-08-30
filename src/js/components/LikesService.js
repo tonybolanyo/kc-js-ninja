@@ -54,10 +54,8 @@ export default class LikesService {
         const liked = article.likedBy.indexOf(userId);
         if (liked >= 0) {
             article.likedBy.splice(liked, 1)
-            console.log("unliked article", article);
         } else {
             article.likedBy.push(userId);
-            console.log("liked article", article);
         }
         localStorage.setItem("likes", JSON.stringify(likes));
         const likesCount = article.likedBy.length;

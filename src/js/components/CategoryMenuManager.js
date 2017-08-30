@@ -15,7 +15,6 @@ export default class CategoryMenuManager {
     init() {
         // putting with attr allows us to see it in the developer elements inspector
         this.element.attr("data-overflow", this.checkOverflow(this.element, this.listElement))
-        console.log("overflow", this.element.data("overflow"));
 
         this.initScrollSpy();
 
@@ -23,7 +22,6 @@ export default class CategoryMenuManager {
             if (this.checkOverflow in ["right", "none"]) {
                 console.log("no se puede ir más a la izquierda");
             }
-            console.log("offset", $(this.element).scrollLeft());
             this.element.animate({
                 scrollLeft: $(this.element).scrollLeft() - this.scrollDistance
             }, this.scrollTime);
@@ -33,7 +31,6 @@ export default class CategoryMenuManager {
             if (this.checkOverflow in ["left", "none"]) {
                 console.log("no se puede ir más a la derecha");
             }
-            console.log("offset", $(this.element).scrollLeft());
             this.element.animate({
                 scrollLeft: $(this.element).scrollLeft() + this.scrollDistance
             }, this.scrollTime);

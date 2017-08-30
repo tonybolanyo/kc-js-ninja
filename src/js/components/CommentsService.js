@@ -19,7 +19,9 @@ export default class CommentsService {
             method = "put"
         }
         $.ajax({
+            method: method,
             url: this.endpoint,
+            data: comment,
             success: successCallback,
             error: errorCallback
         });

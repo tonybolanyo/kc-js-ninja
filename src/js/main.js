@@ -1,6 +1,5 @@
 import $ from "jquery";
-// make jquery globally available
-window.$ = window.jQuery = $;
+import PubSub from "pubsub-js";
 
 import CategoryMenuManager from "./components/CategoryMenuManager";
 import CommentFormManager from "./components/CommentFormManager";
@@ -12,6 +11,9 @@ import NavbarSearchManager from "./components/NavbarSearchManager";
 import SidebarManager from "./components/SidebarManager";
 import SmoothScroll from "./components/SmoothScrool";
 import TimeAgoManager from "./components/TimeAgoManager";
+
+// make jquery globally available
+window.$ = window.jQuery = $;
 
 const sidebarManager = new SidebarManager(".sidebar", ".sidebar-toggle");
 sidebarManager.init();
@@ -36,8 +38,8 @@ navbarSearchManager.init();
 
 const commentsService = new CommentsService("/api/comments");
 
-const commentsListManager = new CommentsListManager(".comments-section", commentsService);
+const commentsListManager = new CommentsListManager(".comments-section", commentsService, PubSub);
 commentsListManager.init();
 
-const commentsFormManager = new CommentFormManager("#commentForm", commentsService);
+const commentsFormManager = new CommentFormManager("#commentForm", commentsService, PubSub);
 commentsFormManager.init();

@@ -3,10 +3,10 @@ import $ from 'jquery';
 import UIStatusManager from "./UIStatusManager";
 
 export default class CommentFormManager extends UIStatusManager {
-    constructor(selector, service) {
+    constructor(selector, service, pubSub) {
         super(selector);
         this.service = service;
-        console.log("constructor", this.element);
+        this.pubSub = pubSub;
     }
 
     init() {
@@ -15,21 +15,18 @@ export default class CommentFormManager extends UIStatusManager {
 
     setupSubmitEventHandler() {
         this.element.on("submit", () => {
-            console.log("setupSubmitEventHandler");
             this.validateAndSend();
             return false;
         });
     }
     
     validateAndSend() {
-        console.log("validateAndSend");
         if (this.isValid()) {
             this.send();
         }
     }
     
     isValid() {
-        console.log("isValid");
         const inputs = this.element.find("input");
         for (let input of inputs) {
             if (input.checkValidity() == false) {
@@ -45,22 +42,21 @@ export default class CommentFormManager extends UIStatusManager {
     }
     
     send() {
-        console.log("send");
-        this.sendLoading();
+        this.setLoading();
         const comment = {
             article_id: this.element.find("#articleId").val(),
             author: this.element.find("#name").val(),
-            email: this.element.find("email").val(),
-            comment: this.element.find("comment").val()
+            email: this.element.find("#email").val(),
+            comment: this.element.find("#comment").val()
         }
-        console.log("sending comment", comment);
+        
         this.service.save(comment, success => {
-            console.log("comment saved", success);
+            this.pubSub.publish("new-comment", comment);
             this.setLoaded();
         }, error => {
             console.error("Error sending comment", error);
             this.setErrorHtml("Error saving comment")
         });
-        console.log("comment submitted");
+        
     }
 }
