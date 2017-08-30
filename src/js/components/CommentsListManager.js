@@ -22,7 +22,7 @@ export default class CommentsListManager extends UIStatusManager {
         console.log("loading comments for article", articleId);
         this.service.listArticleComments(articleId, comments =>{
             if (comments.length == 0) {
-                console.warn("TODO: Lista vacía");
+                this.setEmpty()
             } else {
                 this.renderComments(comments);
                 this.setLoaded();
