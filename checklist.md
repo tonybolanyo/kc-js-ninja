@@ -15,12 +15,12 @@
 ## Listado de artículos
 
     - Enlace a detalle de artículo ---------------- OK
-    - Listado de 10 artículos ---------------------
-    - Ficha de artículo: --------------------------
+    - Listado de 10 artículos --------------------- OK
+    - Ficha de artículo: -------------------------- OK
         - Título ---------------------------------- OK
-        - Imagen o vídeo: -------------------------
+        - Imagen o vídeo: ------------------------- OK
             - Imagen ------------------------------ OK
-            - Vídeo -------------------------------
+            - Vídeo ------------------------------- OK
         - Introducción ---------------------------- OK
         - Nombre del autor ------------------------ OK
         - Foto de perfil -------------------------- OK
@@ -40,7 +40,7 @@
 ## Detalle de un artículo
 
     - Título -------------------------------------- OK
-    - Imagen (no vídeo) ---------------------------
+    - Imagen (no vídeo) --------------------------- OK
     - Texto completo del artículo: ---------------- OK
         - Varios párrafos ------------------------- OK
         - Incluir negritas ------------------------ OK
@@ -65,12 +65,12 @@
     - lista de comentarios ------------------------ OK
     - formulario para envío ----------------------- OK
     - utilizar json server ------------------------ OK
-    - carga asíncrona al ser visible --------------
+    - carga asíncrona al ser visible --------------       PENDIENTE
         - gestión de estados:
             - vacío ------------------------------- OK
-            - cargando ----------------------------
-            - error -------------------------------
-            - éxito -------------------------------
+            - cargando ---------------------------- OK
+            - error ------------------------------- OK
+            - éxito ------------------------------- OK
     - condiciones del formulario:
         - nombre y apellidos (obligatorio) -------- OK
         - email (obligatorio) --------------------- OK
