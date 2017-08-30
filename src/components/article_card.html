@@ -1,7 +1,17 @@
 <div class="article-card height-100">
+    {% if article_video %}
+    <div class="article-video responsive-video-container">
+        <video class="responsive-video" poster="{{ article_image }}">
+            <source src="{{ article_video }}" type="video/mp4">
+                Your browser does not support the video tag.
+        </video>
+        <button class="video-play-button play">play</button>
+    </div>
+    {% else %}
     <div class="article-image">
         <a href="article_detail.html"><img src="{{ article_image }}"></a>
     </div>
+    {% endif %}
     <div class="article-body">
         <div class="article-title">
             <h2><a href="article_detail.html">{{ article_title }}</a></h2>

@@ -56,7 +56,7 @@ gulp.task("default", ["build", "server"], function () {
     gulp.watch(["src/js/*.js", "src/js/**/*.js"], ["js"]);
 });
 
-gulp.task("build", ["fonticon", "images", "html", "sass", "js"]);
+gulp.task("build", ["fonticon", "images", "videos", "html", "sass", "js"]);
 
 gulp.task("server", function () {
     return gulp.src("db.json")
@@ -203,3 +203,9 @@ gulp.task("images", function() {
         .pipe(imagemin())
         .pipe(gulp.dest("dist/img/"));
 });
+
+// videos
+gulp.task("videos", function() {
+    gulp.src(["src/videos/*", "src/videos/**/*"])
+        .pipe(gulp.dest("dist/videos/"));
+})

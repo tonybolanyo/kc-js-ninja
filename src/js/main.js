@@ -11,6 +11,7 @@ import NavbarSearchManager from "./components/NavbarSearchManager";
 import SidebarManager from "./components/SidebarManager";
 import SmoothScroll from "./components/SmoothScrool";
 import TimeAgoManager from "./components/TimeAgoManager";
+import VideoPlayerManager from "./components/VideoPlayerManager";
 
 // make jquery globally available
 window.$ = window.jQuery = $;
@@ -46,3 +47,6 @@ commentsListManager.init();
 
 const commentsFormManager = new CommentFormManager("#commentForm", commentsService, PubSub);
 commentsFormManager.init();
+
+const videoPlayerManager = new VideoPlayerManager(".responsive-video");
+videoPlayerManager.init();
