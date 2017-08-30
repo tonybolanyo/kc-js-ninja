@@ -23,6 +23,7 @@ export default class LikesManager {
         this.element.each((index) => {
             const obj = $(this.element[index]);
             const id = obj.data("article-id");
+            console.log("init", obj, id);
             this.updateLikeIconStatus(obj, id);
             this.updateLikesCounter(obj, id);
         });
@@ -43,6 +44,7 @@ export default class LikesManager {
     }
 
     updateLikeIconStatus(element, articleId) {
+        console.log("updateLikeIconStatus", element, articleId);
         this.likesService.isArticleLiked(articleId, currentUserId, (liked) => {
             const icon = element.find(".icon");
             if (liked) {

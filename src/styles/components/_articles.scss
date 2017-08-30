@@ -1,3 +1,20 @@
+.article-info {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+    margin: $margin 0;
+    .article-author-photo {
+        width: 64px;
+        height: 64px;
+        margin-right: $margin;
+    }
+    .article-meta {
+        color: $dark-neutral-color;
+    }
+    .article-fan {
+        margin-top: $margin/2;
+    }
+}
 .article-card {
     border: solid 1px $medium-neutral-color;
     margin-bottom: $margin;
@@ -51,19 +68,22 @@
     .article-fan {
         white-space: nowrap;
         line-height: 1.8rem;
-        .icon {
-            font-size: 1.5rem;
-            vertical-align: middle;
-        }
-        .icon-liked {
-            color: $liked-icon-color;
-        }
-        a {
-            color: $fan-icon-color;
-            @include no-decoration;
-        }
-        a:hover {
-            color: $secondary-color;
-        }
+    }
+}
+
+.article-fan {
+    .icon {
+        font-size: 1.5rem;
+        vertical-align: middle;
+    }
+    .icon-liked {
+        color: $liked-icon-color;
+    }
+    a {
+        color: $fan-icon-color;
+        @include no-decoration;
+    }
+    a:hover {
+        color: $secondary-color;
     }
 }

@@ -41,21 +41,21 @@
 
     - Título -------------------------------------- OK
     - Imagen (no vídeo) ---------------------------
-    - Texto completo del artículo: ----------------
+    - Texto completo del artículo: ---------------- OK
         - Varios párrafos ------------------------- OK
         - Incluir negritas ------------------------ OK
         - Incluir cursivas ------------------------ OK
         - Incluir enlace -------------------------- OK
-    - Nombre del autor ---------------------------- maquetar
+    - Nombre del autor ---------------------------- OK
     - Foto de perfil ------------------------------ maquetar
-    - Fecha y hora de publicación: ---------------- 
-        - < 1 min: segundos -----------------------
-        - < 1 hora: minutos -----------------------
-        - < 1 día: horas --------------------------
-        - < 1 semana: día de la semana ------------
-        - > 1 semana: fecha y hora completas ------
-    - Botón me gusta: ----------------------------- maquetar
-        - Funcional con web storage ---------------
+    - Fecha y hora de publicación: ---------------- OK
+        - < 1 min: segundos ----------------------- OK
+        - < 1 hora: minutos ----------------------- OK
+        - < 1 día: horas -------------------------- OK
+        - < 1 semana: día de la semana ------------ OK
+        - > 1 semana: fecha y hora completas ------ OK
+    - Botón me gusta: ----------------------------- OK
+        - Funcional con web storage --------------- OK
     - Número de comentarios: ---------------------- maquetar
         - Enlace a los comentarios ---------------- maquetar
     - Sistema de comentarios ----------------------
