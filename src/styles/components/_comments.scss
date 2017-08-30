@@ -1,4 +1,4 @@
-.comment-section {
+@mixin ui-status {
     &.loading .ui-status.loading {
         display: block;
     }
@@ -11,6 +11,10 @@
     &.loaded .ui-status.loaded {
         display: block;
     }
+}
+
+.comments-section {
+    @include ui-status;
 }
 
 .comment {
