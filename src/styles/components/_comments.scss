@@ -1,10 +1,17 @@
 .comment {
     display: flex;
     align-items: flex-start;
+    margin: $margin 0;
+    border-top: solid 1px $light-neutral-color;
+    padding-top: $padding;
+}
+
+.comment > .comment {
+    margin-left: 48px;
 }
 
 .comment-avatar {
-    flex: 0 0 15%;
+    flex: 0 0 48px;
 }
 
 .comment-content {
@@ -22,7 +29,7 @@
 }
 
 .comment-date {
-    color: $light-neutral-color;
+    color: $medium-neutral-color;
 }
 
 .comment-form {
