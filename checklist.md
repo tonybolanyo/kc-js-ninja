@@ -2,7 +2,7 @@
 
     - Encabezado
         - Nombre de la plataforma ----------------- OK
-        - Input de búsquedas ----------------------
+        - Input de búsquedas ---------------------- OK
         - Listado de categorías ------------------- OK
         - Enlace a login -------------------------- OK
         - Enlace a registro ----------------------- OK
@@ -14,7 +14,7 @@
 
 ## Listado de artículos
 
-    - Enlace a detalle de artículo ----------------
+    - Enlace a detalle de artículo ---------------- OK
     - Listado de 10 artículos ---------------------
     - Ficha de artículo: --------------------------
         - Título ---------------------------------- OK
@@ -39,33 +39,32 @@
 
 ## Detalle de un artículo
 
-    - Título --------------------------------------
+    - Título -------------------------------------- OK
     - Imagen (no vídeo) ---------------------------
     - Texto completo del artículo: ----------------
-        - Varios párrafos -------------------------
-        - Incluir negritas ------------------------
-        - Incluir cursivas ------------------------
-        - Incluir enlace --------------------------
-    - Nombre del autor ----------------------------
-    - Foto de perfil ------------------------------
-    - Dos artículo con placeholder ----------------
-    - Fecha y hora de publicación: ----------------
+        - Varios párrafos ------------------------- OK
+        - Incluir negritas ------------------------ OK
+        - Incluir cursivas ------------------------ OK
+        - Incluir enlace -------------------------- OK
+    - Nombre del autor ---------------------------- maquetar
+    - Foto de perfil ------------------------------ maquetar
+    - Fecha y hora de publicación: ---------------- 
         - < 1 min: segundos -----------------------
         - < 1 hora: minutos -----------------------
         - < 1 día: horas --------------------------
         - < 1 semana: día de la semana ------------
         - > 1 semana: fecha y hora completas ------
-    - Botón me gusta: -----------------------------
+    - Botón me gusta: ----------------------------- maquetar
         - Funcional con web storage ---------------
-    - Número de comentarios: ----------------------
-        - Enlace a los comentarios ----------------
+    - Número de comentarios: ---------------------- maquetar
+        - Enlace a los comentarios ---------------- maquetar
     - Sistema de comentarios ----------------------
 
 ### SISTEMA DE COMENTARIOS
 
-    - lista de comentarios ------------------------
-    - formulario para envío -----------------------
-    - utilizar json server ------------------------
+    - lista de comentarios ------------------------ OK
+    - formulario para envío ----------------------- OK
+    - utilizar json server ------------------------ OK
     - carga asíncrona al ser visible --------------
         - gestión de estados:
             - vacío -------------------------------
@@ -73,9 +72,9 @@
             - error -------------------------------
             - éxito -------------------------------
     - condiciones del formulario:
-        - nombre y apellidos (obligatorio) --------
-        - email (obligatorio) ---------------------
-        - texto del comentario: (obligatorio) -----
+        - nombre y apellidos (obligatorio) -------- OK
+        - email (obligatorio) --------------------- OK
+        - texto del comentario: (obligatorio) ----- OK
             - máximo 120 palabras -----------------
         - tener en cuenta errores de envío --------
 

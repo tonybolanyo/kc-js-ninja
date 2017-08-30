@@ -1,32 +1,44 @@
-{% extends "layouts/default.html" %} {% set title = "re/connect - Article details" %} {% set article_id = "3" %} {% block
-content %}
+{% extends "layouts/default.html" %}
+
+{% set title = "re/connect - Article details" %}
+
+{% set article_id = "1" %}
+
+{% block content %}
 
 <div class="frow-container">
     <article>
         <h1>Un artículo de prueba</h1>
+        <div class="article-metadata">
+            <img src="img/user-profile.svg" alt="">
+            Christian Krammer |
+            two days ago |
+            like |
+            <a href="#comments">3 comments</a>
+        </div>
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus libero ullam provident sunt qui, eum quae necessitatibus
             incidunt nam. Dolore itaque error impedit tempora magni provident accusantium unde facilis commodi.</p>
-        <p>At laboriosam enim, itaque, ab tempore sunt dolorem aperiam quam voluptates quis perferendis maiores eligendi quod
+        <p>At laboriosam enim, itaque, <b>ab tempore</b> sunt dolorem aperiam quam voluptates quis perferendis maiores eligendi quod
             id ut facilis autem eveniet sequi a commodi quibusdam quo! Suscipit quibusdam eaque tempore.</p>
         <p>Nisi harum, quidem aliquam laboriosam voluptatem reiciendis tenetur sapiente ut facilis ab laborum! Natus dolore
-            nam nostrum? Quis quos veritatis delectus nemo! Beatae ad facere illo esse rerum eos! Culpa?</p>
+            nam nostrum? Quis quos veritatis delectus nemo! <em>Beatae ad facere</em> illo esse rerum eos! Culpa?</p>
         <p>Commodi minima sit recusandae sed repellendus? Dolores ratione voluptatem saepe est doloribus odit tempora quos accusantium
             laudantium non molestiae eos ad ipsam, harum repellendus voluptates laboriosam molestias temporibus soluta suscipit.</p>
         <p>Officia vero illo in voluptatibus eius harum, quidem tempore magni autem molestias laudantium enim id commodi est
-            magnam corrupti consequuntur optio sapiente praesentium inventore deleniti dolores suscipit dolorem iure. Illum?</p>
+            <i>magnam corrupti</i> consequuntur optio sapiente praesentium inventore deleniti dolores suscipit dolorem iure. Illum?</p>
         <p>Voluptate rerum deserunt voluptates accusantium corrupti fugiat deleniti fugit eius quis earum ab ratione amet libero
             illo voluptatem mollitia error, vel cum similique, ullam in nam perferendis? Laboriosam, doloribus nostrum!</p>
         <p>Assumenda, voluptatibus eos. Aut deserunt et, placeat quae nihil quia, iure necessitatibus, ut itaque cum asperiores
-            officia labore dolorem numquam a optio voluptatum laborum! Facere, aut earum. Ipsam, quidem exercitationem.</p>
-        <p>Quas, voluptatum, modi ipsa suscipit fugit laboriosam, blanditiis voluptatem a quos fugiat soluta? Repudiandae quasi
+            <a href="http://tonygb.com" target="_blank">officia labore</a> dolorem numquam a optio voluptatum laborum! Facere, aut earum. Ipsam, quidem exercitationem.</p>
+        <p>Quas, voluptatum, modi ipsa <b>suscipit fugit laboriosam</b>, blanditiis voluptatem a quos fugiat soluta? Repudiandae quasi
             omnis maxime? Sint necessitatibus laudantium animi doloremque delectus itaque esse molestias, adipisci ipsum
             suscipit consequuntur?
         </p>
         <p>Vero iusto, exercitationem ea, rem, nulla a possimus dicta officia deleniti velit asperiores voluptatem ratione qui.
             Eos eius numquam quam, enim expedita corporis optio animi autem deserunt. Molestiae, ab rem?</p>
         <p>Eligendi ex iusto quo rem eius, tempore aut officiis neque, numquam ipsam praesentium molestias explicabo repudiandae
-            aliquam, hic sequi quas! Reiciendis accusantium quod quas quidem dolores distinctio nesciunt tempora voluptatem.</p>
+            aliquam, hic sequi quas! <strong>Reiciendis accusantium</strong> quod quas quidem dolores distinctio nesciunt tempora voluptatem.</p>
         <p>Quis ut impedit, praesentium illo veritatis deserunt vero, in sed at minima error suscipit eum accusantium facere?
             Id quia expedita qui vel blanditiis, optio rem velit est sequi quos libero?</p>
         <p>Animi voluptate asperiores consequuntur voluptatem itaque? Dolorem, quaerat animi! Porro, consequuntur tempora minima
@@ -36,6 +48,7 @@ content %}
     </article>
 
     <section class="add-comment">
+        <a id="comments"></a>
         <h3>Leave a comment</h3>
         <form class="comment-form loaded" id="commentForm" novalidate>
             <div class="ui-status loading">
