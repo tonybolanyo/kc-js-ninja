@@ -30,6 +30,22 @@
             "email": "dustin.rogers48@example.com",
             "comment": "No comments, please",
             "datetime": "2017-08-21 12:10:01"
+        },
+        {
+            "id": 5,
+            "article_id": 1,
+            "author": "Curtis Pierce",
+            "email": "curtis.pierce83@example.com",
+            "comment": "Thank you for helping us help you help us all. This comment is awesome!",
+            "datetime": "2017-08-30 21:13:41"
+        },
+        {
+            "id": 4,
+            "article_id": 3,
+            "author": "Dustin Rogers",
+            "email": "dustin.rogers48@example.com",
+            "comment": "No comments, please",
+            "datetime": "2017-08-21 12:10:01"
         }
     ]
 }
