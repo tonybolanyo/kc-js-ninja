@@ -34,5 +34,5 @@ const navbarSearchManager = new NavbarSearchManager("#navbar-search", "#search-o
 navbarSearchManager.init();
 
 const commentsService = new CommentsService("/api/comments");
-const commentsListManager = new CommentsListManager(".comment-section", commentsService);
+const commentsListManager = new CommentsListManager(".comments-section", commentsService);
 commentsListManager.init();

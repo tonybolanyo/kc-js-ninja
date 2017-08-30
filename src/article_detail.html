@@ -33,7 +33,7 @@
         </p>
     </article>
 
-    <section class="add-comment">
+    <section class="add-comment" data-article-id="1">
         <h3>Leave a comment</h3>
         <form action="" class="comment-form" novalidate>
             <div class="form-group">
@@ -51,12 +51,26 @@
             <div class="form-group"><button>Send comment</button></div>
         </form>
     </section>
-    <section class="comment-section loading" data-article-id="1">
+    <section class="comments-section loading" data-article-id="1">
         <h3>Comments</h3>
-        <div class="ui-status loading">Loading...</div>
-        <div class="ui-status loaded">Loaded...</div>
-        <div class="ui-status empty">Empty...</div>
-        <div class="ui-status error">Error...</div>
+        <div class="ui-status loading">
+            <div class="spinner"></div>
+            <div class="text-center">Loading comments...</div>
+        </div>
+        <div class="ui-status loaded">Loaded (it shoudn't be shown this way)...</div>
+        <div class="ui-status empty">
+            <div class="alert alert-info">
+                <p>No comments yet. Be the first in comment this article.</p>
+            </div>
+        </div>
+        <div class="ui-status error">
+            <div class="alert alert-error">
+                <h3>Ooops! Something went wrong!</h3>
+                <p>An error has ocurred while loading comments.
+                    Please try again later.
+                    If the problem persist, please contact us using the contact forms.</p>
+            </div>
+        </div>
     </section>
-    </div>
-    {% endblock content %}
+</div>
+{% endblock content %}
