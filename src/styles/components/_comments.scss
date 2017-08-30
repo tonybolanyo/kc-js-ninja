@@ -39,6 +39,9 @@
 .comment-form {
     @include ui-status;
     margin: $margin auto;
+    &.error .ui-status.loaded {
+        display: block;
+    }
     .form-group {
         margin: $margin auto;
         &>button {

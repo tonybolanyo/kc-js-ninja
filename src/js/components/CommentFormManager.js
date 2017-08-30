@@ -6,6 +6,7 @@ export default class CommentFormManager extends UIStatusManager {
     constructor(selector, service) {
         super(selector);
         this.service = service;
+        console.log("constructor", this.element);
     }
 
     init() {
@@ -14,6 +15,7 @@ export default class CommentFormManager extends UIStatusManager {
 
     setupSubmitEventHandler() {
         this.element.on("submit", () => {
+            console.log("setupSubmitEventHandler");
             this.validateAndSend();
             return false;
         });
@@ -27,6 +29,7 @@ export default class CommentFormManager extends UIStatusManager {
     }
     
     isValid() {
+        console.log("isValid");
         const inputs = this.element.find("input");
         for (let input of inputs) {
             if (input.checkValidity() == false) {
@@ -42,6 +45,7 @@ export default class CommentFormManager extends UIStatusManager {
     }
     
     send() {
+        console.log("send");
         this.sendLoading();
         const comment = {
             article_id: this.element.find("#articleId").val(),
