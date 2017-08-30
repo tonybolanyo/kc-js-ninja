@@ -1,9 +1,5 @@
-{% extends "layouts/default.html" %}
-
-{% set title = "re/connect - Article details" %}
-{% set article_id = "3" %}
-
-{% block content %}
+{% extends "layouts/default.html" %} {% set title = "re/connect - Article details" %} {% set article_id = "3" %} {% block
+content %}
 
 <div class="frow-container">
     <article>
@@ -41,21 +37,30 @@
 
     <section class="add-comment">
         <h3>Leave a comment</h3>
-        <form action="" class="comment-form" id="commentForm" novalidate>
-            <input type="hidden" id="articleId" name="articleId" value="{{ article_id }}">
-            <div class="form-group">
-                <label for="email">email</label>
-                <input type="email" id="email" name="email" required="required">
+        <form action="" class="comment-form loaded" id="commentForm" novalidate>
+            <div class="ui-status loading">
+                <div class="spinner"></div>
+                <div class="text-center">Sending comment, please wait...</div>
             </div>
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required="required">
+            <div class="alert alert-error ui-status error">
+                Error container.
             </div>
-            <div class="form-group">
-                <label for="comment">Comment</label>
-                <textarea name="comment" id="comment" cols="30" rows="10" required="required"></textarea>
+            <div class="ui-status loaded">
+                <input type="hidden" id="articleId" name="articleId" value="{{ article_id }}">
+                <div class="form-group">
+                    <label for="email">email</label>
+                    <input type="email" id="email" name="email" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comment</label>
+                    <textarea name="comment" id="comment" cols="30" rows="10" required="required"></textarea>
+                </div>
+                <div class="form-group"><button>Send comment</button></div>
             </div>
-            <div class="form-group"><button>Send comment</button></div>
         </form>
     </section>
     <section class="comments-section loading" data-article-id="{{ article_id }}">
@@ -73,9 +78,8 @@
         <div class="ui-status error">
             <div class="alert alert-error">
                 <h3>Ooops! Something went wrong!</h3>
-                <p>An error has ocurred while loading comments.
-                    Please try again later.
-                    If the problem persist, please contact us using the contact forms.</p>
+                <p>An error has ocurred while loading comments. Please try again later. If the problem persist, please contact
+                    us using the contact forms.</p>
             </div>
         </div>
     </section>
