@@ -1,0 +1,26 @@
+.login-form,
+.register-form {
+    position: relative;
+    @include ui-status;
+    margin: $margin auto;
+    &.error .ui-status.loaded,
+    &.loading .ui-status.loaded {
+        display: block;
+    }
+    &>.overlay {
+        position: absolute;
+        left: 0;
+        right: 0;
+        max-width: 400px;
+        margin: 0 auto;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, .7);
+    }
+    .form-group {
+        margin: $margin auto;
+        &>button {
+            display: block;
+            width: 100%;
+        }
+    }
+}

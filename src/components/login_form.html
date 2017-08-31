@@ -1,0 +1,21 @@
+<form class="login-form loaded" id="loginForm" novalidate>
+    <div class="ui-status loading overlay">
+        <div class="spinner"></div>
+        <div class="text-center">Checking credentials...</div>
+    </div>
+    <div class="alert alert-error ui-status error">
+        Login incorrect. Please check your email and password.
+    </div>
+    <div class="ui-status loaded">
+        <div class="form-group">
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" required="required">
+        </div>
+        <div class="form-group">
+            <label for="name">Password</label>
+            <input type="password" id="password" name="password" required="required">
+        </div>
+        <div class="form-group"><button>Login</button></div>
+        <div><a href="#">Forgot your password?</a></div> 
+    </div>
+</form>
