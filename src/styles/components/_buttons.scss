@@ -32,7 +32,7 @@
     font-family: $font-family;
     color: $text-color;
     cursor: pointer;
-    transition: all .25s ease;
+    transition: all $animation-duration ease;
 }
 
 .btn-primary {

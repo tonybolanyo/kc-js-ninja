@@ -21,7 +21,7 @@
 
     &.pause {
         opacity: 0;
-        transition: opacity .3s ease;
+        transition: opacity $animation-duration ease;
         &:hover {
             opacity: 1;
         }
