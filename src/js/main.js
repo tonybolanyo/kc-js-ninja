@@ -3,6 +3,7 @@ import PubSub from "pubsub-js";
 
 import CategoryMenuManager from "./components/CategoryMenuManager";
 import CommentFormManager from "./components/CommentFormManager";
+import CommentsCounterManager from "./components/CommentsCounterManager";
 import CommentsListManager from "./components/CommentsListManager";
 import CommentsService from "./components/CommentsService";
 import LikesManager from "./components/LikesManager";
@@ -53,3 +54,6 @@ commentsFormManager.init();
 
 const videoPlayerManager = new VideoPlayerManager(".responsive-video");
 videoPlayerManager.init();
+
+const commentsCounterManager = new CommentsCounterManager(".comments-counter", commentsService, PubSub);
+commentsCounterManager.init();1

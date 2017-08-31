@@ -29,4 +29,16 @@ export default class CommentsService {
         });
     }
 
+    getCommentsCount(articleId, successCallback, errorCallback) {
+        $.ajax({
+            method: "get",
+            url: `${this.endpoint}?article_id=${articleId}&_start=0&_end=1`,
+            success: function(data, textStatus, jqXHR) {
+                const count = jqXHR.getResponseHeader("x-total-count");
+                successCallback({ "count": count });
+            },
+            error: errorCallback
+        });
+    }
+
 }
