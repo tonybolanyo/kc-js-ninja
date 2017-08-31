@@ -10,7 +10,7 @@
     padding-top: $padding;
 }
 
-.comment > .comment {
+.comment>.comment {
     margin-left: 48px;
 }
 
@@ -37,9 +37,11 @@
 }
 
 .comment-form {
+    position: relative;
     @include ui-status;
     margin: $margin auto;
-    &.error .ui-status.loaded {
+    &.error .ui-status.loaded,
+    &.loading .ui-status.loaded {
         display: block;
     }
     .form-group {
@@ -49,4 +51,14 @@
             width: 100%;
         }
     }
+}
+
+.comment-form > .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    max-width: 400px;
+    margin: 0 auto;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, .7);
 }

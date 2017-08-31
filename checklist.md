@@ -65,7 +65,7 @@
     - lista de comentarios ------------------------ OK
     - formulario para envío ----------------------- OK
     - utilizar json server ------------------------ OK
-    - carga asíncrona al ser visible --------------       PENDIENTE
+    - carga asíncrona al ser visible -------------- OK
         - gestión de estados:
             - vacío ------------------------------- OK
             - cargando ---------------------------- OK

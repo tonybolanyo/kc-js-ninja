@@ -1,0 +1,12 @@
+input.error, textarea.error {
+    border-color: $error-color;
+}
+
+label.error {
+    color: $error-color;
+}
+
+form .error-message {
+    font-size: $font-size-s;
+    color: $error-color;
+}
