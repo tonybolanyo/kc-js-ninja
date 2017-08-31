@@ -7,6 +7,7 @@ import CommentsListManager from "./components/CommentsListManager";
 import CommentsService from "./components/CommentsService";
 import LikesManager from "./components/LikesManager";
 import LikesService from "./components/LikesService";
+import MaxWordsValidator from "./components/MaxWordsValidator";
 import NavbarSearchManager from "./components/NavbarSearchManager";
 import SidebarManager from "./components/SidebarManager";
 import SmoothScroll from "./components/SmoothScrool";
@@ -45,7 +46,9 @@ commentDateTimeManager.init();
 const commentsListManager = new CommentsListManager(".comments-section", commentsService, PubSub, commentDateTimeManager);
 commentsListManager.init();
 
-const commentsFormManager = new CommentFormManager("#commentForm", commentsService, PubSub);
+const maxWordsValidator = new MaxWordsValidator();
+
+const commentsFormManager = new CommentFormManager("#commentForm", commentsService, PubSub, maxWordsValidator);
 commentsFormManager.init();
 
 const videoPlayerManager = new VideoPlayerManager(".responsive-video");

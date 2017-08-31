@@ -3,10 +3,11 @@ import $ from 'jquery';
 import UIStatusManager from "./UIStatusManager";
 
 export default class CommentFormManager extends UIStatusManager {
-    constructor(selector, service, pubSub) {
+    constructor(selector, service, pubSub, maxWordValidator) {
         super(selector);
         this.service = service;
         this.pubSub = pubSub;
+        this.maxWordValidator = maxWordValidator;
     }
 
     init() {
@@ -37,9 +38,22 @@ export default class CommentFormManager extends UIStatusManager {
                     field.focus();
                     noError = false;
                 }
-                this.setError();
             }
         }
+
+        const errorFields = this.maxWordValidator.validate();
+        for (let errorField of errorFields) {
+            this.setFieldError(errorField, "Number of words excedeed. (120 max.)");
+            if (noError) {
+                field.focus();
+                noError = false;
+            }
+        }
+
+        if (noError === false) {
+            this.setError();
+        }
+
         return noError;
     }
     
