@@ -11,6 +11,9 @@ export default class CommentsListManager extends UIStatusManager {
     }
 
     init() {
+        if (this.element.length === 0) {    // no comments section
+            return
+        }
         this.pubSub.subscribe("new-comment", (topic, comment) => {
             this.loadComments(comment.article_id);
         });

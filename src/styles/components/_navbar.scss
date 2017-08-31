@@ -13,13 +13,22 @@
             text-align: right;
             margin-right: $margin;
             margin-top: $margin;
-            //flex: 1 0 calc(100% - (310+$margin)px);
+            @include if-size-sm {
+                margin-top: 0;
+            }
         }
     }
     @include if-size-sm {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+    }
+
+    .icon {
+        font-size: $font-size-l;
+        @include if-size-sm {
+            font-size: $font-size-xl;
+        }
     }
 }
 

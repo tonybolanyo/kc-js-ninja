@@ -11,8 +11,11 @@
     transition: all $animation-duration ease;
     opacity: 0;
     &.expanded {
-        top: 3.7rem;
+        top: 6rem;
         opacity: 1;
+        @include if-size-sm {
+            top: 3.5rem;
+        }
     }
     input {
         display: inline;
