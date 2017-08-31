@@ -56,8 +56,8 @@
         - > 1 semana: fecha y hora completas ------ OK
     - Botón me gusta: ----------------------------- OK
         - Funcional con web storage --------------- OK
-    - Número de comentarios: ---------------------- maquetar
-        - Enlace a los comentarios ---------------- maquetar
+    - Número de comentarios: ---------------------- OK
+        - Enlace a los comentarios ---------------- OK
     - Sistema de comentarios ----------------------
 
 ### SISTEMA DE COMENTARIOS
@@ -75,8 +75,8 @@
         - nombre y apellidos (obligatorio) -------- OK
         - email (obligatorio) --------------------- OK
         - texto del comentario: (obligatorio) ----- OK
-            - máximo 120 palabras -----------------
-        - tener en cuenta errores de envío --------
+            - máximo 120 palabras ----------------- OK
+        - tener en cuenta errores de envío -------- OK
 
 ## Consideraciones generales
 

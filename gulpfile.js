@@ -21,9 +21,9 @@ var twig = require("gulp-twig");
 var autoprefixer = require("autoprefixer");
 var cssnano = require("cssnano");
 var postcss = require("gulp-postcss");
+var purifycss = require("gulp-purifycss");
 var sass = require("gulp-sass");
 var stylelint = require('stylelint');
-var uncss = require('gulp-uncss');
 
 // for JavaScript
 var browserify = require("browserify");
@@ -92,11 +92,7 @@ gulp.task("sass", ["sass:lint"], function () {
             gzip: true,
             showFiles: true
         }))
-        /*
-        .pipe(uncss({
-            html: ["src/*.html", "src/components/*.html", "src/layouts/*.html", "src/includes/*.html"]
-        }))
-        */
+        .pipe(purifycss(["src/js/*.js", "src/js/**/*.js", "src/*.html", "src/components/*.html", "src/layouts/*.html", "src/includes/*.html"]))
         .pipe(postcss([
             // add prefixes to old browsers compatibility
             autoprefixer(),
