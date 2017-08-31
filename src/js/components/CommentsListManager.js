@@ -7,21 +7,36 @@ export default class CommentsListManager extends UIStatusManager {
         this.articleId = this.element.data("article-id");
         this.pubSub = pubSub;
         this.dateTimeFormatter = dateTimeFormatter;
+        this.initLoaded = false;
     }
-    
+
     init() {
-        if (this.articleId) {
-            this.loadComments(this.articleId);
-        } else {
-            console.log("No article ID");
-        }
         this.pubSub.subscribe("new-comment", (topic, comment) => {
             this.loadComments(comment.article_id);
         });
+        $(window).on("scroll", (e) => {
+            this.lazyLoad($(e.currentTarget), this.element);
+        });
+        $(window).on("resize", (e) => {
+            this.lazyLoad($(e.currentTarget), this.element);
+        });
     }
-    
+
+    lazyLoad(window, section) {
+        const windowBottom = window.scrollTop() + window.height();
+        const elementBottom = section.position().top + section.outerHeight();
+        if (!this.initLoaded && windowBottom >= elementBottom) {
+            this.initLoaded = true;
+            if (this.articleId) {
+                this.loadComments(this.articleId);
+            } else {
+                console.log("No article ID");
+            }
+        }
+    }
+
     loadComments(articleId) {
-        this.service.listArticleComments(articleId, comments =>{
+        this.service.listArticleComments(articleId, comments => {
             if (comments.length == 0) {
                 this.setEmpty()
             } else {
