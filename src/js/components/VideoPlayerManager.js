@@ -12,11 +12,11 @@ export default class VideoPlayerManager {
                 this.toggleVideoPlay(video, button);
             });
             $(video).on("pause", () => {
-                button.html("play");
+                button.html('<i class="icon icon-play"></i>');
                 button.addClass("pause").removeClass("play");
             });
             $(video).on("play", () => {
-                button.html("pause")
+                button.html('<i class="icon icon-pause"></i>');
                 button.addClass("pause").removeClass("play");
             });
         }
