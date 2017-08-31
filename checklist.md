@@ -24,7 +24,7 @@
         - Introducción ---------------------------- OK
         - Nombre del autor ------------------------ OK
         - Foto de perfil -------------------------- OK
-            - Dos artículo con placeholder --------
+            - Dos artículo con placeholder -------- OK
         - Fecha y hora de publicación: ------------ OK
             - < 1 min: segundos ------------------- OK
             - < 1 hora: minutos ------------------- OK
@@ -47,7 +47,7 @@
         - Incluir cursivas ------------------------ OK
         - Incluir enlace -------------------------- OK
     - Nombre del autor ---------------------------- OK
-    - Foto de perfil ------------------------------ maquetar
+    - Foto de perfil ------------------------------ OK
     - Fecha y hora de publicación: ---------------- OK
         - < 1 min: segundos ----------------------- OK
         - < 1 hora: minutos ----------------------- OK
@@ -58,7 +58,7 @@
         - Funcional con web storage --------------- OK
     - Número de comentarios: ---------------------- OK
         - Enlace a los comentarios ---------------- OK
-    - Sistema de comentarios ----------------------
+    - Sistema de comentarios ---------------------- OK
 
 ### SISTEMA DE COMENTARIOS
 
@@ -85,9 +85,9 @@
         - Un sólo css ----------------------------- OK
     - Minimizar assets:
         - Minimizar JS ---------------------------- OK
-        - Minimizar CSS --------------------------- falta UnCSS o PurifyCSS
+        - Minimizar CSS --------------------------- OK
         - Minimizar Imágenes ---------------------- OK
-    - Imágenes responsive -------------------------
+    - Imágenes responsive ------------------------- revisar
     - Navegadores:
         - Google Chrome ---------------------------
         - Mozilla Firefox -------------------------
