@@ -1,7 +1,7 @@
 <div class="article-card height-100">
     {% if article_video %}
     <div class="article-video responsive-video-container">
-        <video class="responsive-video" poster="{{ article_image }}">
+        <video class="responsive-video" poster="img/articles/{{ article_image }}-1250px.jpg">
             <source src="{{ article_video }}" type="video/mp4">
                 Your browser does not support the video tag.
         </video>
@@ -9,7 +9,15 @@
     </div>
     {% else %}
     <div class="article-image">
-        <a href="article_detail.html"><img src="{{ article_image }}"></a>
+        <a href="article_detail.html">
+            {% if article_id == 1 %}
+                <img src="img/articles/{{ article_image }}-1200px.jpg" srcset="img/articles/{{ article_image }}-720px.jpg 720w, img/articles/{{ article_image }}-1250px.jpg 1250w">
+            {% elseif article_id == 2 %}
+                <img src="img/articles/{{ article_image }}-1200px.jpg" srcset="img/articles/{{ article_image }}-350px.jpg 350w, img/articles/{{ article_image }}-720px.jpg 720w, img/articles/{{ article_image }}-1250px.jpg 1250w">
+            {% else %}
+                <img src="img/articles/{{ article_image }}-1200px.jpg" srcset="img/articles/{{ article_image }}-350px.jpg 350w, img/articles/{{ article_image }}-720px.jpg 720w, img/articles/{{ article_image }}-1250px.jpg 1250w">
+            {% endif %}
+        </a>
     </div>
     {% endif %}
     <div class="article-body">

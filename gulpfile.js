@@ -33,6 +33,7 @@ var uglify = require("gulp-uglify");
 
 // for images
 var imagemin = require("gulp-imagemin");
+var responsive = require("gulp-responsive");
 
 // font icon
 var iconfont = require('gulp-iconfont');
@@ -195,7 +196,20 @@ gulp.task("fonticon", function () {
 
 // images
 gulp.task("images", function() {
-    gulp.src(["src/images/*", "src/images/**/*"])
+    gulp.src(["src/images/*", "src/images/**/*", "!src/images/*.svg"])
+        .pipe(responsive({
+            'articles/*.jpg': [
+                { width: 350, rename: { suffix: "-350px"} },
+                { width: 720, rename: { suffix: "-720px"} },
+                { width: 1250, rename: { suffix: "-1250px"} }
+            ],
+            'profiles/*.jpg': [
+                { width: 50 }
+            ]
+        }))
+        .pipe(imagemin())
+        .pipe(gulp.dest("dist/img/"));
+    gulp.src(["src/images/*.svg"])
         .pipe(imagemin())
         .pipe(gulp.dest("dist/img/"));
 });
