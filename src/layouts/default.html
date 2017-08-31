@@ -13,63 +13,13 @@
     <a name="top"></a>
     <nav class="navbar">
         <div class="title">
-            <a href="#" class="logo logo-big">
+            <a href="index.html" class="logo logo-big">
                 <div class="logo-image"></div>
                 <span>re/</span>connect
             </a>
         </div>
-        <div class="navbar-horizontal navbar-center navbar-main">
-            <ul class="navbar-list">
-                <li class="navbar-item">
-                    <a href="#" id="search-opener"><span class="icon icon-search"></span></a>
-                    <form action="" class="navbar-search" id="navbar-search">
-                        <input type="search" placeholder="Search">
-                        <button type="submit"><i class="icon icon-search"></i></button>
-                    </form>
-                </li>
-                <li class="navbar-item">
-                    <a href="login.html"><i class="icon icon-login"></i></a>
-                </li>
-            </ul>
-        </div>
-        <div class="navbar-scrolling-wrapper">
-            <div class="navbar-horizontal navbar-scrolling" id="catMenu">
-                <ul class="navbar-list" id="catMenuList">
-                    <li class="navbar-item"><a href="#">Lorem</a></li>
-                    <li class="navbar-item"><a href="#">Ipsum</a></li>
-                    <li class="navbar-item"><a href="#">Dolor</a></li>
-                    <li class="navbar-item"><a href="#">Sit</a></li>
-                    <li class="navbar-item"><a href="#">Amet</a></li>
-                    <li class="navbar-item"><a href="#">Consectetur</a></li>
-                    <li class="navbar-item"><a href="#">Adipisicing</a></li>
-                    <li class="navbar-item"><a href="#">Elit</a></li>
-                    <li class="navbar-item"><a href="#">Voluptate</a></li>
-                    <li class="navbar-item"><a href="#">Delectus</a></li>
-                    <li class="navbar-item"><a href="#">Explicabo</a></li>
-                    <li class="navbar-item"><a href="#">Aperiam</a></li>
-                    <li class="navbar-item"><a href="#">Facilis</a></li>
-                    <li class="navbar-item"><a href="#">Odio</a></li>
-                    <li class="navbar-item"><a href="#">Ipsa</a></li>
-                    <li class="navbar-item"><a href="#">Dignissimos</a></li>
-                    <li class="navbar-item"><a href="#">Laboriosam</a></li>
-                    <li class="navbar-item"><a href="#">Temporibus</a></li>
-                    <li class="navbar-item"><a href="#">Animi</a></li>
-                    <li class="navbar-item"><a href="#">Quam</a></li>
-                    <li class="navbar-item"><a href="#">Minima</a></li>
-                    <li class="navbar-item"><a href="#">Libero</a></li>
-                    <li class="navbar-item"><a href="#">Alias</a></li>
-                    <li class="navbar-item"><a href="#">Repellat</a></li>
-                    <li class="navbar-item"><a href="#">Cupiditate</a></li>
-                    <li class="navbar-item"><a href="#">Numquam</a></li>
-                </ul>
-            </div>
-            <div class="navbar-indicator left">
-                <i class="icon icon-left-arrow"></i>
-            </div>
-            <div class="navbar-indicator right">
-                <i class="icon icon-right-arrow"></i>
-            </div>
-        </div>
+        {% include "../components/main_menu.html" %}
+        {% include "../components/categories_menu.html" %}
     </nav>
     <main>
         {% block content %} {% endblock %}
