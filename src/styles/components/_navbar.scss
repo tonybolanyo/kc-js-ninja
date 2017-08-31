@@ -77,7 +77,7 @@
 }
 
 .navbar-scrolling {
-    margin: $margin 2*$margin;
+    margin: $margin 3*$margin;
     overflow-x: hidden;
     overflow-y: hidden;
     white-space: nowrap;
@@ -94,7 +94,9 @@
     top: 0;
     bottom: 0;
     line-height: 2rem;
+    font-size: $font-size-l;
     opacity: 0;
+    color: $link-color;
     &.left {
         left: $margin;
         [data-overflow="both"]~&,
@@ -104,10 +106,12 @@
     }
     &.right {
         right: $margin;
-        line-height: 4rem;
         [data-overflow="both"]~&,
         [data-overflow="right"]~& {
             opacity: 1;
         }
+    }
+    @include if-size-sm {
+        line-height: 4rem;
     }
 }
