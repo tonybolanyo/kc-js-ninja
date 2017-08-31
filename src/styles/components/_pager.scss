@@ -14,8 +14,14 @@
     @include no-decoration;
     padding: $padding/2 $padding;
     color: $medium-neutral-color;
+    font-size: $font-size-m;
+    line-height: $font-size-m;
+    padding-bottom: 0;
     &:hover {
         color: $link-color;
+    }
+    .icon {
+        vertical-align: sub;
     }
 }
 
