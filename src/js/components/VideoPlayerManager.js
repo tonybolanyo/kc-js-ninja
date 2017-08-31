@@ -13,7 +13,7 @@ export default class VideoPlayerManager {
             });
             $(video).on("pause", () => {
                 button.html('<i class="icon icon-play"></i>');
-                button.addClass("pause").removeClass("play");
+                button.addClass("play").removeClass("pause");
             });
             $(video).on("play", () => {
                 button.html('<i class="icon icon-pause"></i>');
