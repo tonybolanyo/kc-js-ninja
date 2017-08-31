@@ -38,7 +38,6 @@ export default class CommentFormManager extends UIStatusManager {
                     noError = false;
                 }
                 this.setError();
-                console.log(this, "setError");
             }
         }
         return noError;
@@ -58,8 +57,8 @@ export default class CommentFormManager extends UIStatusManager {
             this.resetForm();
             this.setLoaded();
         }, error => {
-            console.error("Error sending comment", error);
-            this.setErrorHtml("Error saving comment")
+            console.error("Error sending comment, please try again.", error);
+            this.setErrorHtml("Error sending comment, please try again.")
         });
         
     }
@@ -83,12 +82,10 @@ export default class CommentFormManager extends UIStatusManager {
 
     disableFormControls() {
         this.element.find("input, textarea, button").attr("disabled", true);
-        console.log("disabled");
     }
     
     enableFormControls() {
         this.element.find("input, textarea, button").attr("disabled", false);
-        console.log("enabled");
     }
 
     setLoading() {

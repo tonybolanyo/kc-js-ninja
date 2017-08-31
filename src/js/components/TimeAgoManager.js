@@ -12,11 +12,9 @@ export default class TimeAgoManager {
         moment.relativeTimeThreshold('h', 24);
         moment.relativeTimeThreshold('d', 30);
         moment.relativeTimeThreshold('M', 12);
-        console.log("time manager constructor");
     }
     
     init() {
-        console.log("time manager init", this.element);
         this.setFormattedDate();
     }
     
@@ -38,12 +36,10 @@ export default class TimeAgoManager {
             const dateElement = $(this.element[index]);
             const dateValue = moment(dateElement.data("pub-date"));
             dateElement.html(this.getFormattedDate(dateValue));
-            console.log("set html for", dateElement);
         });
     }
 
     setupElements() {
         this.element = $(this.selector);
-        console.log("setupElements", this.elements);
     }
 }
