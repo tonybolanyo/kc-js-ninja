@@ -3,7 +3,8 @@
 {% set title = "re/connect - Article details" %}
 {% set article_id = "1" %}
 {% set article_date = "2017-08-30 18:33:26" %}
-{% set article_author = "Tony G. Bolaño" %}
+{% set article_author = "Jessie Jennings" %}
+{% set article_author_image = "img/profiles/jessie_jennings.jpg" %}
 
 {% block content %}
 
@@ -11,7 +12,7 @@
     <article>
 
         <div class="article-header-image">
-            <img src="img/articles/01.jpg" alt="">
+            <img src="img/articles/01-1250px.jpg" srcset="img/articles/01-720px.jpg 720w, img/articles/01-1250px.jpg 1250w">
         </div>
 
         <h1>Un artículo de prueba</h1>
@@ -49,8 +50,8 @@
             dignissimos!
         </p>
         <div class="article-info">
-            <div class="article-author-photo" data-profile="{{ article_author_image }}">
-                <img src="img/user-profile.svg">
+            <div class="article-author-photo">
+                <img src="{{ article_author_image }}">
             </div>
             <div class="article-meta">
                 <div class="article-author-name">

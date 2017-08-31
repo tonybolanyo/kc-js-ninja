@@ -29,8 +29,12 @@
         </div>
     </div>
     <div class="article-footer">
-        <div class="article-author-photo" data-profile="{{ article_author_image }}">
-            <img src="img/user-profile.svg">
+        <div class="article-author-photo">
+            {% if article_author_image %}
+                <img src="{{ article_author_image }}" alt="{{ article_author }}">
+            {% else %}
+                <img src="img/user-profile.svg">
+            {% endif %}
         </div>
         <div class="article-meta">
             <div class="article-author-name">
