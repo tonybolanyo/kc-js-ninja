@@ -65,14 +65,3 @@
         }
     }
 }
-
-.pager-input {
-    display: inline-block;
-    margin-left: $margin;
-    >input {
-        width: 4rem; // 5 to 7 characters long
-        padding: $padding/2;
-        border: 1px solid #ccc;
-        text-align: center;
-    }
-}
