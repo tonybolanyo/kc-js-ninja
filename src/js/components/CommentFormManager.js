@@ -45,7 +45,7 @@ export default class CommentFormManager extends UIStatusManager {
         for (let errorField of errorFields) {
             this.setFieldError(errorField, "Number of words excedeed. (120 max.)");
             if (noError) {
-                field.focus();
+                errorField.focus();
                 noError = false;
             }
         }
