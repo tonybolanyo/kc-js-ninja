@@ -1,7 +1,7 @@
 .responsive-video-container {
     position: relative;
     overflow: hidden;
-    height: 120px;
+    height: 200px;
 }
 
 .responsive-video-container .video-play-button {
@@ -37,6 +37,8 @@
     /* Setting width & height to auto prevents the browser from stretching or squishing the video */
     width: auto;
     height: auto;
+
+    max-width: none;
     
     /* Center the video */
     position: absolute;

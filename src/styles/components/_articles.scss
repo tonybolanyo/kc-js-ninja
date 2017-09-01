@@ -15,6 +15,7 @@
         margin-top: $margin/2;
     }
 }
+
 .article-card {
     border: solid 1px $medium-neutral-color;
     margin-bottom: $margin;
@@ -23,9 +24,28 @@
     display: flex;
     flex-direction: column;
     .article-image {
-        width: 100%;
-        img {
-            width: 100%;
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+        .image-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        .top-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: auto;
+            height: auto;
+            max-height: 100%;
+            max-width: none;
+            min-height: 100%;
+            min-width: 100%;
+            transform: translate(-50%, -50%);
         }
     }
     .article-body {
@@ -68,6 +88,17 @@
     .article-fan {
         white-space: nowrap;
         line-height: 1.8rem;
+    }
+}
+
+.article-card.big-image {
+    .article-image {
+        @include if-size-md {
+            height: 400px;
+        }
+    }
+    .top-image {
+        max-height: none;
     }
 }
 

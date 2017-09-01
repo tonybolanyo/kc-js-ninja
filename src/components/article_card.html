@@ -1,4 +1,4 @@
-<div class="article-card height-100">
+<div class="article-card height-100{% if article_id == 1 %} big-image{% endif %}">
     {% if article_video %}
     <div class="article-video responsive-video-container">
         <video class="responsive-video" poster="img/articles/{{ article_image }}-1250px.jpg">
@@ -9,13 +9,13 @@
     </div>
     {% else %}
     <div class="article-image">
-        <a href="article_detail.html">
+        <a href="article_detail.html" class="image-container">
             {% if article_id == 1 %}
-                <img src="img/articles/{{ article_image }}-1200px.jpg" srcset="img/articles/{{ article_image }}-720px.jpg 720w, img/articles/{{ article_image }}-1250px.jpg 1250w">
+                <img class="top-image" src="img/articles/{{ article_image }}-1250px.jpg" srcset="img/articles/{{ article_image }}-720px.jpg 720w, img/articles/{{ article_image }}-1250px.jpg 1250w">
             {% elseif article_id == 2 %}
-                <img src="img/articles/{{ article_image }}-1200px.jpg" srcset="img/articles/{{ article_image }}-350px.jpg 350w, img/articles/{{ article_image }}-720px.jpg 720w, img/articles/{{ article_image }}-1250px.jpg 1250w">
+                <img class="top-image" src="img/articles/{{ article_image }}-1250px.jpg" srcset="img/articles/{{ article_image }}-350px.jpg 350w, img/articles/{{ article_image }}-720px.jpg 720w, img/articles/{{ article_image }}-1250px.jpg 1250w">
             {% else %}
-                <img src="img/articles/{{ article_image }}-1200px.jpg" srcset="img/articles/{{ article_image }}-350px.jpg 350w, img/articles/{{ article_image }}-720px.jpg 720w, img/articles/{{ article_image }}-1250px.jpg 1250w">
+                <img class="top-image" src="img/articles/{{ article_image }}-1250px.jpg" srcset="img/articles/{{ article_image }}-350px.jpg 350w, img/articles/{{ article_image }}-720px.jpg 720w, img/articles/{{ article_image }}-1250px.jpg 1250w">
             {% endif %}
         </a>
     </div>
