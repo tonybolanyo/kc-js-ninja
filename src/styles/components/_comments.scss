@@ -16,6 +16,11 @@
 
 .comment-avatar {
     flex: 0 0 48px;
+    img {
+        // dimensions needed on IE 11
+        height: 64px;
+        width: 64px;
+    }
 }
 
 .comment-content {
